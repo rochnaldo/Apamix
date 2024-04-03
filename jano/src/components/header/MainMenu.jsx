@@ -30,7 +30,6 @@ const MainMenu = () => {
         <span />
       </button>
       {/* End mobile collapse menu */}
-
       <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
               <li className="d-block d-lg-none">
@@ -46,127 +45,58 @@ const MainMenu = () => {
                   <Link
                       to="/" // Route vers la page d'accueil
                       className={isActive("/")
-                      ? "nav-link active-menu"
-                      : "nav-link"}
+                          ? "nav-link active-menu"
+                          : "nav-link"}
                   >
                       Acceuil
                   </Link>
               </li>
               {/* End li (home mega menu) */}
 
-              <li className="nav-item dropdown">
-                  <a
-                      className={
-                          isActive("/pages-menu/about-us-v1") || isActive("/pages-menu/about-us-v2")
-                              ? "nav-link dropdown-toggle active-menu"
-                              : "nav-link dropdown-toggle"
-                      }
-                      href="#"
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      data-bs-auto-close="outside"
-                      aria-expanded="false"
+              <li className="nav-item">
+                  <Link
+                      to="/particuliers" // Route vers la page d'accueil
+                      className={isActive("/particuliers")
+                          ? "nav-link active-menu"
+                          : "nav-link"}
                   >
-                      Offres
-                  </a>
-                  <ul className="dropdown-menu">
-                      <li>
-                          <Link
-                              to="/"
-                              className={
-                                  isActive("/pages-menu/about-us-v1")
-                                      ? "dropdown-item active"
-                                      : "dropdown-item"
-                              }
-                          >
-                              <span>Particuliers</span>
-                          </Link>
-                      </li>
-                      <li>
-                          <Link
-                              to="/"
-                              className={
-                                  isActive("/pages-menu/about-us-v2")
-                                      ? "dropdown-item active"
-                                      : "dropdown-item"
-                              }
-                          >
-                              <span>Entreprises</span>
-                          </Link>
-                      </li>
-                  </ul>
+                      Particuliers
+                  </Link>
               </li>
               {/* End li (pages) */}
-
+              <li className="nav-item">
+                  <Link
+                      to="/entreprises" // Route vers la page d'accueil
+                      className={isActive("/entreprises")
+                          ? "nav-link active-menu"
+                          : "nav-link"}
+                  >
+                      Entreprises
+                  </Link>
+              </li>
               <li className="nav-item ">
                   <Link
                       to="/coachs"
                       className={isActive("/coachs")
-                      ? "nav-link active-menu"
-                      : "nav-link"}
+                          ? "nav-link active-menu"
+                          : "nav-link"}
                   >Coachs
                   </Link>
               </li>
               {/* End li (portfolio) */}
-
               <li className="nav-item">
                   <Link
                       to="/book"
                       className={isActive("/book")
-                      ? "nav-link active-menu"
-                      : "nav-link"}
+                          ? "nav-link active-menu"
+                          : "nav-link"}
                   >
                       Réserver votre séance
                   </Link>
               </li>
-              {/* End li (blog) */}
-
-              {/*<li className="nav-item dropdown">*/}
-              {/*  <a*/}
-              {/*    className={*/}
-              {/*      contactItems.some((elm) => isActive(elm.link))*/}
-              {/*        ? "nav-link dropdown-toggle active-menu"*/}
-              {/*        : "nav-link dropdown-toggle"*/}
-              {/*    }*/}
-              {/*    href="#"*/}
-              {/*    role="button"*/}
-              {/*    data-bs-toggle="dropdown"*/}
-              {/*    data-bs-auto-close="outside"*/}
-              {/*    aria-expanded="false"*/}
-              {/*  >*/}
-              {/*    Contact*/}
-              {/*  </a>*/}
-              {/*  <ul className="dropdown-menu">*/}
-              {/*    {contactItems.map((contact, index) => (*/}
-              {/*      <li key={index}>*/}
-              {/*        <Link*/}
-              {/*          to={contact.link}*/}
-              {/*          className={`dropdown-item ${*/}
-              {/*            isActive(contact.link) ? "active" : ""*/}
-              {/*          }`}*/}
-              {/*        >*/}
-              {/*          <span>{contact.text}</span>*/}
-              {/*        </Link>*/}
-              {/*      </li>*/}
-              {/*    ))}*/}
-              {/*  </ul>*/}
-              {/*</li>*/}
-              {/* End li (contact) */}
           </ul>
           {/* End ul */}
 
-          {/* Mobile Content */}
-          {/*<div className="mobile-content d-block d-lg-none">*/}
-          {/*  <div className="d-flex flex-column align-items-center justify-content-center mt-70">*/}
-          {/*    <Link*/}
-          {/*      to="/contact/contact-v1"*/}
-          {/*      className="btn-twentyOne fw-500 tran3s"*/}
-          {/*    >*/}
-          {/*      Contact us*/}
-          {/*    </Link>*/}
-          {/*  </div>*/}
-          {/*</div>*/}
-          {/* /.mobile-content */}
       </div>
     </nav>
   );
