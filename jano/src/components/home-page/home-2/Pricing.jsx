@@ -93,7 +93,7 @@ const Pricing = () => {
               style={{height: "800px"}} //
           >
             <div className="pack-name fw-500 tx-dark">{plan.name}</div>
-            <div className="pack-details text-uppercase fs-14">
+            <div className="pack-details text-uppercase fs-14" style={{maxHeight: "400px"}}>
               {plan.details}
             </div>
             <div className="d-flex justify-content-center mb-3">

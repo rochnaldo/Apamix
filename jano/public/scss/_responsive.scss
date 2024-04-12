@@ -36,7 +36,8 @@
     padding: 20px 0 15px;
   }
   .pricing-table-area-four .pr-table-wrapper {
-    padding: 25px 15px 30px;
+    padding: 10px; /* Réduire l'espacement intérieur de la carte */
+    max-width: 50%;
   }
   .pricing-table-area-four .pr-table-wrapper .top-banner span {
     font-size: 20px;
@@ -1426,7 +1427,7 @@
   }
   .portfolio-block-seven .pj-title {
     font-size: 20px;
-    margin-top: 6px;
+    margin-top: 0px;
   }
   .inner-banner-two {
     padding: 180px 0 50px;

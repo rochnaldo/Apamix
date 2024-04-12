@@ -4,17 +4,17 @@ const Property = () => {
   const properties = [
     {
       image: "/images/media/img_73.jpg",
-      title: "Condos",
+      title: "Individuelle",
       delay: "100",
     },
     {
       image: "/images/media/img_74.jpg",
-      title: "Property",
+      title: "Collectif",
       delay: "200",
     },
     {
       image: "/images/media/img_75.jpg",
-      title: "Home Rent",
+      title: "Remise en forme",
       delay: "300",
     },
   ];

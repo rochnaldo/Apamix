@@ -54,16 +54,6 @@ const AppBanner = () => {
             alt=""
             className="lazy-img screen-two"
           />
-          {/*<img*/}
-          {/*  src="images/shape/shape_139.svg"*/}
-          {/*  alt=""*/}
-          {/*  className="lazy-img shapes shape-one"*/}
-          {/*/>*/}
-          {/*<img*/}
-          {/*  src="images/shape/shape_140.svg"*/}
-          {/*  alt=""*/}
-          {/*  className="lazy-img shapes shape-two"*/}
-          {/*/>*/}
         </div>{" "}
         {/* /.illustration-holder */}
       </div>

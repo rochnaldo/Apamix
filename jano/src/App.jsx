@@ -56,6 +56,7 @@ import ContactV2 from "./pages/contact/contact-v2";
 import ContactV3 from "./pages/contact/contact-v3";
 import ContactV4 from "./pages/contact/contact-v4";
 import ScrollTopBehaviour from "./components/common/ScrollTopBehavier";
+import Particuliers from "@/pages/particuliers/particuliers.jsx";
 function App() {
   useEffect(() => {
     Aos.init({
@@ -69,6 +70,7 @@ function App() {
         <Route path="/">
           <Route index element={<Insurance />} />
           <Route path="home/web-hosting" element={<WebHosting />} />
+          <Route path="/particuliers" element={<Particuliers />} />
           <Route path="home/education" element={<Education />} />
           <Route path="home/charity" element={<Charity />} />
           <Route path="home/real-estate" element={<RealEstate />} />
