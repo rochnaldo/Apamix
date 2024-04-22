@@ -17,11 +17,12 @@ import CounterSection from "@/components/home-page/home-13/Counter.jsx";
 import Features from "@/components/home-page/home-4/Features.jsx";
 import AboutCeo from "@/components/about/AboutCeo.jsx";
 import Counter2 from "@/components/about/Counter2.jsx";
+import AboutCeo2 from "@/components/about/AboutCeo2.jsx";
 
-const Particuliers = () => {
+const Entreprises = () => {
   return (
       <>
-          <Seo pageTitle="Particuliers"/>
+          <Seo pageTitle="Entreprises"/>
           <Header/>
           <div
               className="fancy-feature-fiftyNine position-relative mt-140 "
@@ -30,9 +31,9 @@ const Particuliers = () => {
               <div className="container">
                   <div className="title-style-ten text-center" data-aos="fade-up">
                       <h2 className="main-title tx-dark">
-                          Ce qu'on proposent aux {" "}
+                          Ce qu'on propose aux {" "}
                           <span className="position-relative">
-                Particuliers.
+                Entreprises.
                 <img src="/images/shape/shape_188.svg" alt="shape"/>
               </span>
                       </h2>
@@ -43,21 +44,11 @@ const Particuliers = () => {
                               className="text-lg tx-dark text-center lh-lg mt-25 md-mt-20"
                               data-aos="fade-up"
                           >
-                              Plus besoin de se déplacer, nous intervenons directement chez vous ! Nous vous proposons
-                              des
-                              séances d’activité physique adaptée tout au long de l’année.
+                              Vous cherchez à promouvoir le bien-être et la santé de vos employés tout en favorisant un environnement de travail dynamique et positif ? Découvrez nos services sur mesure pour les entreprises, adaptés à vos besoins spécifiques.
                           </p>
                       </div>
                   </div>
-                  {/* End .row */}
-                  {/*<div className="border-bottom border-4 border-dark my-4"></div>*/}
-
-                  {/* /.card-wrapper */}
               </div>
-              {" "}
-              {/* /.container */}
-
-              {/* /.wrapper */}
               <img
                   src="/images/shape/shape_189.svg"
                   alt="shape"
@@ -68,9 +59,7 @@ const Particuliers = () => {
                       <div className="position-relative pt-100 pb-10 lg-pt-120 lg-pb-110">
                           <About/>
                       </div>
-                      {/* /.line-bg-wrapper */}
                   </div>
-                  {/* /.container */}
               </div>
           </div>
           <div className="pricing-section-two position-relative pt-150 pb-150 mt-180 lg-mt-120 lg-pt-70 lg-pb-70 mt-n3">
@@ -82,11 +71,9 @@ const Particuliers = () => {
                               data-aos="fade-up"
                           >
                               <h2 className="main-title fw-500 tx-dark m0 fs-1">
-                                  Vous vous interrogez sur la compatibilité de l'activité physique avec votre santé
-                                  ?
+                                  Investissez dans le bien-être de votre entreprise
                               </h2>
                           </div>
-                          {/* /.title-style-four */}
                       </div>
                       <div className="row mb-4">
                           <div className="col-xl-9 m-auto">
@@ -94,12 +81,7 @@ const Particuliers = () => {
                                   className="text-lg tx-dark text-center lh-lg mt-10 md-mt-20"
                                   data-aos="fade-up"
                               >
-                                  Chez Apamix, nous avons constaté à maintes reprises comment le simple acte
-                                  de création peut être une force de croissance, de changement et de découverte
-                                  dans la vie des individus. Nous souhaitons inspirer et favoriser le type d'exploration
-                                  créative qui encourage l'expression, l'apprentissage et l'application, tout en
-                                  s'adaptant
-                                  à tous les handicaps et en proposant des séances personnalisées
+                                  Chez Apamix, nous comprenons l'importance de la santé et du bien-être des employés pour la productivité et la satisfaction au travail. Nous offrons des solutions sur mesure pour soutenir le bien-être de vos employés et favoriser un environnement de travail épanouissant.
                               </p>
                           </div>
                       </div>
@@ -111,7 +93,6 @@ const Particuliers = () => {
                           </div>
                       </div>
                   </div>
-
               </div>
               <img
                   src="/images/shape/shape_52.svg"
@@ -136,7 +117,7 @@ const Particuliers = () => {
               <div className="fancy-feature-two position-relative pt-150 lg-pt-90">
                   <div className="container">
                       <div className="row align-items-center">
-                          <AboutCeo/>
+                          <AboutCeo2/>
                       </div>
                   </div>
               </div>
@@ -145,4 +126,4 @@ const Particuliers = () => {
   );
 };
 
-export default Particuliers;
+export default Entreprises;
