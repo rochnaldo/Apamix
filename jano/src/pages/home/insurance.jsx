@@ -130,12 +130,7 @@ const Insurance = () => {
             <div className="wrapper pricing-table-area-four m-auto pt-10 lg-pt-30 mb-4">
               <div className="row d-flex align-items-center justify-content-center">
                 <Pricing/>
-                <img
-                    src="/images/assets/colorGroup.svg"
-                    className="position-absolute top-0 start-50 translate-middle-x"
-                    style={{zIndex: -1, maxWidth: "60%", marginTop: "20%"}}
-                    alt="colorGroup"
-                />
+
               </div>
             </div>
           </div>
