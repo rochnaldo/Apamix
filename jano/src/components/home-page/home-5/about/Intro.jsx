@@ -2,9 +2,8 @@ const Intro = () => {
   return (
     <>
       <div className="title-style-eleven">
-        <div className="sc-title">Offre</div>
-        <h2 className="main-title text-black">
-          Apamix chez vous !
+        <h2 className="main-title hero-heading fw-bold mt-45 mb-40 md-mt-20">
+          Apamix pour  les <span className="gradient-text">Particuliers</span>
         </h2>
       </div>
       <div className="d-flex mt-70 mb-40 lg-mt-40 lg-mb-10">

@@ -24,48 +24,16 @@ const Particuliers = () => {
           <Seo pageTitle="Particuliers"/>
           <Header/>
           <div
-              className="fancy-feature-fiftyNine position-relative mt-140 "
-              data-aos="fade-up"
+              className="hero-banner-three position-relative pb-0 pt-100 md-pt-150"
+              data-aos="fade-right"
           >
-              <div className="container">
-                  <div className="title-style-ten text-center" data-aos="fade-up">
-                      <h2 className="main-title tx-dark">
-                          Ce qu'on proposent aux {" "}
-                          <span className="position-relative">
-                Particuliers.
-                <img src="/images/shape/shape_188.svg" alt="shape"/>
-              </span>
-                      </h2>
-                  </div>
-                  <div className="row">
-                      <div className="col-xl-9 m-auto">
-                          <p
-                              className="text-lg tx-dark text-center lh-lg mt-25 md-mt-20"
-                              data-aos="fade-up"
-                          >
-                              Plus besoin de se déplacer, nous intervenons directement chez vous ! Nous vous proposons
-                              des
-                              séances d’activité physique adaptée tout au long de l’année.
-                          </p>
-                      </div>
-                  </div>
-                  {/* End .row */}
-                  {/*<div className="border-bottom border-4 border-dark my-4"></div>*/}
-
-                  {/* /.card-wrapper */}
-              </div>
               {" "}
               {/* /.container */}
 
               {/* /.wrapper */}
-              <img
-                  src="/images/shape/shape_189.svg"
-                  alt="shape"
-                  className="lazy-img shapes shape-one"
-              />
-              <div className="fancy-feature-fortyEight position-relative">
+              <div className="fancy-feature-fortyEight position-relative pb-0">
                   <div className="container">
-                      <div className="position-relative pt-100 pb-10 lg-pt-120 lg-pb-110">
+                      <div className="position-relative pb-0 lg-pt-120 lg-pb-110">
                           <About/>
                       </div>
                       {/* /.line-bg-wrapper */}
@@ -74,7 +42,7 @@ const Particuliers = () => {
               </div>
           </div>
           <div className="pricing-section-two position-relative pt-150 pb-150 mt-180 lg-mt-120 lg-pt-70 lg-pb-70 mt-n3">
-              <div className="container">
+          <div className="container">
                   <div className="row">
                       <div className="col-lg-8 col-md-9 m-auto">
                           <div
@@ -141,6 +109,44 @@ const Particuliers = () => {
                   </div>
               </div>
           </div>
+          <div className="footer-style-ten theme-basic-footer zn2 position-relative mt-40">
+          <div className="container">
+            <div className="inner-wrapper">
+              <div className="row justify-content-between">
+                <div className="col-lg-3 footer-intro mb-40">
+                  <div className="logo">
+                    <Link to="/">
+                      <img src="/images/logo/logo_02.png" alt="logo" width={95}/>
+                    </Link>
+                  </div>
+                  <p className="text-white opacity-75 fs-18 mt-15 mb-45 lg-mb-10">
+                    Best Insurance Company.
+                  </p>
+                  <p className="text-white opacity-50 fs-15 m0 d-none d-lg-block">
+                    © {new Date().getFullYear()} - {new Date().getFullYear() + 1}{" "}
+                    jano inc.
+                  </p>
+                </div>
+                <Footer/>
+              </div>
+            </div>
+            {/* /.inner-wrapper */}
+          </div>
+          {/* End .container */}
+          <img
+              src="/images/assets/ils_13.png"
+              alt="illustration"
+              className="lazy-img illustration-one"
+              data-aos="fade-left"
+          />
+          <img
+              src="/images/assets/ils_14.png"
+              alt="illustration"
+              className="lazy-img illustration-two"
+              data-aos="fade-right"
+          />
+        </div>
+        {/* /.footer-style-ten */}
       </>
   );
 };
