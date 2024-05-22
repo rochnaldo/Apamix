@@ -8,6 +8,7 @@ import Block from "../../components/home-page/home-1/Block";
 import Blog from "../../components/home-page/home-1/Blog";
 import ContactForm from "../../components/home-page/home-1/ContactForm";
 import Feature from "../../components/home-page/home-1/Feature";
+import Partner from "../../components/home-page/home-2/Partner.jsx"
 import Hero from "../../components/home-page/home-7/Hero";
 import IntroAbout from "../../components/home-page/home-1/IntroAbout";
 import Header from "../../components/home-page/home-7/Header";
@@ -47,6 +48,15 @@ const Insurance = () => {
               </div>
             </div>
           </div>
+
+          <div className="partner-section-four position-relative pt-100 sm-pt-70">
+            <div className="wrapper m-auto">
+              <div className="partner_slider_one row">
+                <Partner/>
+              </div>
+            </div>
+            {/* /.wrapper */}
+          </div>
           {/* /.container */}
 
           <div className="mobile-screen" data-aos="fade-right">
@@ -69,7 +79,7 @@ const Insurance = () => {
 			--> */}
         <div className="fancy-feature-thirtyFour mt-50">
           <div className="container">
-            <div className="row gx-xxl-5">
+          <div className="row gx-xxl-5">
               {/*<Feature/>*/}
             </div>
           </div>
@@ -174,7 +184,7 @@ const Insurance = () => {
                   className="col-xxl-6 col-md-5 text-center text-md-end"
                   data-aos="fade-left"
               >
-                <a href="#" className="btn-one fw-500 sm-mt-30">
+                <a href="/coachs" className="btn-one fw-500 sm-mt-30">
                   Voir toute l'équipe
                 </a>
               </div>
@@ -186,7 +196,7 @@ const Insurance = () => {
                 <Team5/>
               </div>
               {/* /.row */}
-              <CallToAction />
+              {/*<CallToAction />*/}
               
             </div>
 
