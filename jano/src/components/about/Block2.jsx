@@ -1,46 +1,78 @@
-import React from "react";
+import { Link } from "react-router-dom";
+import React, { useRef, useEffect } from "react";
+
+const cardData = [
+  {
+    id: 1,
+    iconSrc: "/images/icon/certificate.png",
+    bgColor: "white",
+    title: "Qualifications.",
+    description:
+      "Licence STAPS (Activité Physique Adaptée et Santé) + Master 2 (Activité Physique Adaptée et Santé).",
+    delay: 0,
+  },
+  {
+    id: 2,
+    iconSrc: "/images/icon/3d-car.png",
+    bgColor: "white",
+    title: "Permis & véhicule.",
+    description:
+      "Permis de conduire et voiture personnelle.",
+    delay: 200,
+  },
+  {
+    id: 3,
+    iconSrc: "/images/icon/recruitment.png",
+    bgColor: "white",
+    title: "Type de poste.",
+    description:
+      "Indépendant, à temps partiel.",
+    delay: 300,
+  },
+  {
+    id: 4,
+    iconSrc: "/images/icon/social-care.png",
+    bgColor: "white",
+    title: "Responsabilités.",
+    description:
+      "Encadrer un public spécifique. Animer des séances en toute sécurité. Travailler efficacement en équipe. Adapter les séances en fonction du public cible. Ajuster les exercices en temps réel pour répondre aux besoins individuels.",
+    delay: 0,
+  },
+];
 
 const Block2 = () => {
-  const cardData = [
-    {
-      iconSrc: "/images/icon/icon_175.svg",
-      title: "Learn skills with over 120k+",
-      subtitle: "Video courses.",
-      delay: 0,
-    },
-    {
-      iconSrc: "/images/icon/icon_176.svg",
-      title: "Choose courses taught by",
-      subtitle: "Real-world experts.",
-      delay: 200,
-    },
-    {
-      iconSrc: "/images/icon/icon_177.svg",
-      title: "Learn with lifetime access on",
-      subtitle: "Mobile and desktop.",
-      delay: 300,
-    },
-  ];
-
   return (
-    <>
+    <div className="row justify-content-center">
       {cardData.map((card, index) => (
         <div
-          key={index}
-          className="col-lg-4 col-sm-6"
+          className="col-lg-3 col-sm-6 mb-20"
           data-aos="fade-up"
           data-aos-delay={card.delay}
+          key={card.id}
         >
-          <div className="card-style-twentySix text-center mt-25">
-            <div className="icon rounded-circle m-auto d-flex align-items-center justify-content-center">
+          <div
+            className="card-style-one pe-xxl-5 position-relative mb-90 md-mb-70"
+            style={{ backgroundColor: card.bgColor }}
+          >
+            <div
+              className="icon d-flex align-items-center justify-content-center"
+              style={{ backgroundColor: card.bgColor }}
+            >
               <img src={card.iconSrc} alt="icon" className="lazy-img" />
             </div>
-            <h5 className="tx-dark mt-40 lg-mt-30 mb-5">{card.title}</h5>
-            <p className="fs-18">{card.subtitle}</p>
+            <h5 className="fw-500 mt-35 mb-25">
+              <Link to="/pages-menu/service-details" className="tran3s tx-dark">
+                {card.title}
+              </Link>
+            </h5>
+            <p className="mb-25">{card.description}</p>
+            <Link to="/pages-menu/service-details">
+
+            </Link>
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 
