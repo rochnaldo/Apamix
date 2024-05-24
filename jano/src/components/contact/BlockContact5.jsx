@@ -2,22 +2,22 @@ const BlockContact5 = () => {
   const addressBlocks = [
     {
       icon: "/images/icon/icon_178.svg",
-      title: "Our Address",
-      content: "1012 Pebda Parkway, Mirpur 2 Dhaka, Bangladesh",
+      title: "Par mail",
+      content: "megroche12@gmail.com",
       delay: "100",
     },
     {
       icon: "/images/icon/icon_179.svg",
-      title: "Contact Info",
-      content: "Open a chat or give us call at",
-      link: "tel:310.841.5500",
+      title: "Par téléphone",
+      content: "",
+      link: "tel:+262 692 001760",
       delay: "200",
     },
     {
       icon: "/images/icon/icon_180.svg",
-      title: "Live Support",
-      content: "live chat service",
-      link: "www.janolivechat.com",
+      title: "Postulez en ligne ",
+      content: "lien vérifié",
+      link: "https://7vio9ivee3w.typeform.com/to/qeWQU57l",
       delay: "300",
     },
   ];

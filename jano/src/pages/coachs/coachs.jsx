@@ -18,6 +18,9 @@ import AboutCeo from "@/components/about/AboutCeo.jsx";
 import Counter2 from "@/components/about/Counter2.jsx";
 import Testimonial from "@/components/home-page/home-5/Testimonial.jsx";
 import {Link} from "react-router-dom";
+import BlockContact5 from "@/components/contact/BlockContact5.jsx";
+import ContactForm4 from "@/components/contact/ContactForm4.jsx";
+import Map2 from "@/components/contact/Map2.jsx";
 
 const Coachs = () => {
   return (
@@ -84,7 +87,10 @@ const Coachs = () => {
               </div>
               <div className="col-lg-5 ms-auto aos fadeInRight">
                 <p className="text-lg text-center text-lg-start md-pt-30 m0">
-                  Nous sommes à la recherche d'un professionnel passionné et compétent pour rejoindre notre équipe en tant qu’Enseignant en Activité Physique Adaptée. Si vous êtes motivé par l'idée d'aider les individus à atteindre leurs objectifs de santé et de bien-être à travers une approche personnalisée, cette opportunité pourrait être la vôtre.
+                  Nous sommes à la recherche d'un professionnel passionné et compétent pour rejoindre notre équipe en
+                  tant qu’Enseignant en Activité Physique Adaptée. Si vous êtes motivé par l'idée d'aider les individus
+                  à atteindre leurs objectifs de santé et de bien-être à travers une approche personnalisée, cette
+                  opportunité pourrait être la vôtre.
                 </p>
               </div>
             </div>
@@ -94,6 +100,32 @@ const Coachs = () => {
               <Block2/>
             </div>
           </div>
+        </div>
+
+        {/*Block de Contact*/}
+        <div className="contact-section-four pt-180 md-pt-150">
+          <div className="container">
+            <div className="row">
+              <div className="col-xxl-7 col-lg-6 col-md-7 m-auto">
+                <div
+                    className="title-style-fourteen text-center mb-100 lg-mb-50"
+                    data-aos="fade-up"
+                >
+                  <div className="sc-title">POSTULEZ ICI</div>
+                  <h2 className="hero-heading fw-bold">
+                    Vous voulez postuler
+                  </h2>
+                </div>
+                {/* /.title-style-fourteen */}
+              </div>
+            </div>
+            <div className="row">
+              <BlockContact5/>
+            </div>
+          </div>
+          {/* End .container */}
+
+          {/* /.contact-meta */}
         </div>
         <div className="footer-style-ten theme-basic-footer zn2 position-relative mt-40">
           <div className="container">

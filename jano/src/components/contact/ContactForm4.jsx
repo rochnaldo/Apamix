@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactForm4 = () => {
   return (
-    <form action="#">
+    <form action="eliottroche97419@gmail.com" method="post" enctype="text/plain">
       <div className="messages" />
       <div className="row controls">
         <div className="col-12">
