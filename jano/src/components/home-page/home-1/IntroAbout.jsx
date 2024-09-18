@@ -3,6 +3,12 @@ import ModalVideo from "react-modal-video";
 
 const IntroAbout = () => {
   const [isOpen, setOpen] = useState(false);
+  const [showFirstPart, setShowFirstPart] = useState(true); // État pour gérer la bascule du texte
+
+  const toggleText = () => {
+    setShowFirstPart(!showFirstPart); // Change de texte quand le bouton est cliqué
+  };
+
   const cardsData = [
     {
       id: 1,
@@ -44,11 +50,32 @@ const IntroAbout = () => {
             {/*  onClick={() => setOpen(true)}*/}
             {/*/>*/}
             <p className="tx-dark pt-30 pb-30 md-pb-15 fs-3" data-aos="fade-up">
-              J'ai fondé mon entreprise <span className="fw-500">Apamix</span> avec passion et dévouement. Chaque jour, je suis inspirée par la
-              possibilité d'offrir à tous,
-              quel que soit leur niveau de forme physique, la chance de découvrir leur
-              force intérieure, de retrouver confiance en eux-mêmes et de vivre pleinement
-              chaque instant de leur vie.
+              {showFirstPart ? (
+                  <>
+                    Je m’appelle Meghan Roche, épouse Levy-soussan. J’ai 29 ans
+                    et je suis la fondatrice d’Apamix, une entreprise que j’ai lancée
+                    il y a 3 ans avec une mission claire : offrir à chacun l’accès à
+                    l’activité physique adaptée, souvent méconnue mais essentielle
+                    pour la santé. Originaire de la Réunion et diplômée d’un
+                    Master 2 en Activité Physique Adaptée et Santé à Grenoble,
+                    j’ai toujours été motivée par le désir profond d’aider les autres
+                    à prendre soin de leur santé.
+                  </>
+              ) : (
+                  <>
+                    Apamix est né de ma volonté de rendre l’activité physique
+                    accessible à tous, en dépit des obstacles souvent rencontrés.
+                    Aujourd’hui, je dirige une équipe d’intervenants passionnés et
+                    qualifiés, qui partagent mon engagement. Ensemble, nous nous
+                    dévouons à offrir des programmes personnalisés qui permettent
+                    à chacun de progresser à son rythme et de découvrir les
+                    bienfaits de l’activité physique adaptée.
+                  </>
+
+              )}
+              <button onClick={toggleText} className="read-more-btn">
+                {showFirstPart ? "Lire la suite" : "Retour"}
+              </button>
             </p>
             {/*<h6*/}
             {/*  className="fs-20 tx-dark d-inline-block fst-italic position-relative ps-4"*/}
@@ -57,6 +84,7 @@ const IntroAbout = () => {
             {/*  Jessica Woodbeck*/}
             {/*</h6>*/}
           </div>
+
           {/* /.text-wrapper */}
         </div>
         {/* End .col */}
@@ -64,14 +92,14 @@ const IntroAbout = () => {
         <div className="col-xl-7 col-md-6 order-md-first" data-aos="fade-up">
           <div className="img-holder d-lg-inline-flex position-relative zn2 pb-45 xl-pb-90">
             <img
-              src="/images/shape/shape_135.svg"
-              alt="shape"
-              className="lazy-img"
+                src="/images/shape/shape_135.svg"
+                alt="shape"
+                className="lazy-img"
             />
             <img
-              src="/images/assets/Meg.png"
-              className="lazy-img avatar-img"
-              alt="man"
+                src="/images/assets/Meg.png"
+                className="lazy-img avatar-img"
+                alt="man"
             />
 
             {cardsData.map((item) => (
