@@ -1,14 +1,5 @@
 import { Link } from "react-router-dom";
-import {
-  menuItems,
-  pagesItems,
-  portfolioItems,
-  blogItems,
-  contactItems,
-} from "../../data/menu";
-
 import { useLocation } from "react-router-dom";
-
 const MainMenu = () => {
   const { pathname } = useLocation();
 
@@ -60,7 +51,7 @@ const MainMenu = () => {
                           ? "nav-link active-menu"
                           : "nav-link"}
                   >
-                      Particuliers
+                      Particulier
                   </Link>
               </li>
               {/* End li (pages) */}
@@ -71,7 +62,7 @@ const MainMenu = () => {
                           ? "nav-link active-menu"
                           : "nav-link"}
                   >
-                      Entreprises
+                      Professionel
                   </Link>
               </li>
               <li className="nav-item ">
@@ -91,7 +82,7 @@ const MainMenu = () => {
                           ? "nav-link active-menu"
                           : "nav-link"}
                   >
-                      Réserver votre séance
+                      Prendre contact
                   </Link>
               </li>
           </ul>

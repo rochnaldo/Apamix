@@ -1,15 +1,17 @@
-import HeroBtnGroup from "./HeroBtnGroup";
 import {Link} from "react-router-dom";
 
 const Hero = () => {
   return (
     <>
         <h1 className="hero-heading fw-bold mt-45 mb-40 md-mt-20">
-            Faites bouger votre vie vers le bien-être avec <span className="gradient-text">Apamix</span>
+            Prenez le contrôle de votre santé avec <span className="gradient-text">Apamix</span>  <br/>
+            Excellence en mouvement.
         </h1>
         <p className="text-lg mb-50 lg-mb-30 pe-xxl-4">
-            Avec notre expertise en activité physique adaptée, découvrez le chemin
-            vers une vie plus saine et équilibrée, où chaque mouvement compte.
+            Le sport pour tous !
+            Offrez-vous la santé que vous méritez : commencez dès
+            maintenant avec une séance d’activité physique adaptée
+            et transformez votre vie
         </p>
 
         <div className="d-sm-flex align-items-center">
