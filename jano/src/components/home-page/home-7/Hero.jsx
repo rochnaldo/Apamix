@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 const Hero = () => {
   return (
     <>
-        <h1 className="hero-heading fw-bold mt-45 mb-40 md-mt-20">
+        <h1 className="hero-heading fw-bold mt-45 mb-40 md-mt-20" style={{fontSize: "70px"}}>
             Prenez le contrôle de votre santé avec <span className="gradient-text">Apamix</span>  <br/>
             Excellence en mouvement.
         </h1>

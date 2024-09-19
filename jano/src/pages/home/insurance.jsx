@@ -29,20 +29,20 @@ const Insurance = () => {
         {/* <!--
       =============================================
 			Theme Default Menu
-			============================================== 	
+			==============================================
       --> */}
         <Header/>
         {/* <!--
 			=============================================
 			Theme Hero Banner
-			============================================== 
+			==============================================
 			--> */}
         <div
             className="hero-banner-three position-relative pt-200 md-pt-150"
             data-aos="fade-right"
         >
-          <div className="container">
-            <div className="row">
+          <div className="container" style={{ transform: "translateY(-20px)" }}>
+            <div className="row" >
               <div className="col-lg-6">
                 <Hero/>
               </div>
@@ -75,7 +75,7 @@ const Insurance = () => {
         {/* <!--
 			=============================================
 				Feature Section Thirty Four
-			============================================== 
+			==============================================
 			--> */}
         <div className="fancy-feature-thirtyFour mt-50">
           <div className="container">
@@ -107,7 +107,7 @@ const Insurance = () => {
         </div>
         {/* =============================================
 				Feature Section Thirty Eight
-			============================================== 
+			==============================================
 			*/}
         <div className="fancy-feature-thirtyEight mt-140 lg-mt-100">
           <div className="container">
@@ -197,7 +197,7 @@ const Insurance = () => {
               </div>
               {/* /.row */}
               {/*<CallToAction />*/}
-              
+
             </div>
 
           </div>
