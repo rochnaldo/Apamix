@@ -122,7 +122,7 @@ const AboutCeo = () => {
           <p className="fs-18 mb-10 pt-30 lg-pt-20">
             <span className="fw-500 tx-dark">{product.rating.text}</span>
           </p>
-          <button type="button" className="btn-twentyOne fw-500 tran3s">Réservez</button>
+          <button type="button" className="btn-twentyOne fw-500 tran3s">Prendre contact</button>
 
         </div>
       </div>

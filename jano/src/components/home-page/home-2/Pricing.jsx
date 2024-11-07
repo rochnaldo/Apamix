@@ -46,39 +46,36 @@ const plans = [
     animDelay: "100",
   },
 ];
+
 const Pricing = () => {
   const [selectedPlan, setSelectedPlan] = useState(2);
+
   return (
       <>
         {plans.map((plan) => (
             <div
-                className="col-xl-4 col-sm-6"
+                className="col-xl-4 col-sm-6 mb-4 d-flex align-items-stretch"
                 key={plan.id}
                 data-aos="fade-up"
                 data-aos-delay={plan.animDelay}
             >
               <div
-                  className="pr-table-wrapper mt-40 d-flex flex-column justify-content-between"
+                  className="pr-table-wrapper d-flex flex-column justify-content-between"
                   style={{
-                    height: "800px",
                     backgroundColor: plan.bgColor,
                     borderRadius: 30,
-                    overflow: "hidden" // Cache les débordements
+                    overflow: "hidden", // Cache les débordements
+                    flex: "1 1 0", // Permet aux cartes de prendre toute la largeur disponible
                   }}
               >
                 <div className="pack-name fw-500 tx-dark">{plan.name}</div>
-                <div className="pack-details text-uppercase fs-14" style={{ maxHeight: "400px", color: "white" }}>
+                <div className="pack-details text-uppercase fs-14" style={{ maxHeight: "100px", color: "white" }}>
                   {plan.details}
                 </div>
                 <div className="d-flex justify-content-center mb-3">
-                  <img
-                      src={plan.src}
-                      className="lazy-img avatar-img"
-                      alt="man"
-                  />
+                  <img src={plan.src} className="lazy-img avatar-img" alt="man" />
                 </div>
-                {/* /.top-banner */}
-                <div className="pr-feature-container" style={{ overflowY: 'auto', maxHeight: '200px' }}>
+                <div className="pr-feature-container" style={{ overflowY: 'auto', maxHeight: '150px' }}>
                   <ul className="pr-feature style-none">
                     {plan.features.map((feature, i) => (
                         <li style={{ color: "white" }} key={i}>{feature}</li>
@@ -88,11 +85,7 @@ const Pricing = () => {
                 <a href="#" className={plan.btnClass}>
                   En savoir plus
                 </a>
-                <div className="trial-text pt-25 tx-dark">
-                  Offre disponible
-                </div>
               </div>
-              {/* /.pr-table-wrapper */}
             </div>
         ))}
       </>

@@ -184,7 +184,7 @@ const blogs = [
   {
     id: 26,
     imageSrc: "/images/blog/blog_img_12.jpg",
-    tag: "Design",
+    tag: "Particuliers",
     title: "Speaking remotely at WordCamp US.",
     date: "18 Jul 2022",
     delay: "100",

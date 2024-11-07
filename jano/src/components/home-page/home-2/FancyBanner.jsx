@@ -3,23 +3,22 @@ import { Link } from "react-router-dom";
 const FancyBanner = () => {
   const bannerData = [
     {
-      title: "TRSUTED SECURITY",
-      mainTitle: "Security you can trust blindly.",
+      title: "Des programmes sur-mesure",
+      mainTitle: "Séances personnalisées pour chaque besoin",
       description:
-        "Lorem ipsum began as scrambled, Latin derived Cicero's 1st-century BC text De Finibus ubiquitous lorem ipsum passage.",
-      buttonLabel: "Click here to learn more",
-      illustration: "/images/assets/ils_06.png",
+        "Spécifiques : Gym douce, Gym assise, Relaxation, Méditation, Stretching, Ergonomie, ETP (Éducation Thérapeutique du Patient), Classiques : Renforcement musculaire, Endurance, Équilibre, Mobilité, Coordination, Reconditionnement physique.",
+      illustration: "/images/assets/cardParticuliers-removebg.png",
       illustrationAlt: "illustration",
       illustrationPosition: "right",
       aos: "fade-right",
     },
     {
-      title: "SITE TRANSFER",
-      mainTitle: "Migration is super fast with no downtime.",
+      title: "Améliorer la santé et la performance de vos équipes",
+      mainTitle: "Séances adaptées pour un bien-être en entreprise",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisci sed do eiusmod tempor incididunt ut labore et dolore magna ad minim veniam.",
       buttonLabel: "",
-      illustration: "/images/assets/ils_07.png",
+      illustration: "/images/assets/cardEntreprise.png",
       illustrationAlt: "illustration",
       illustrationPosition: "left",
       aos: "fade-left",
@@ -44,20 +43,11 @@ const FancyBanner = () => {
                     {data.mainTitle}
                   </h2>
                 </div>
-                <p className="fs-20 lh-lg mt-35 lg-mt-20">{data.description}</p>
-                {data.buttonLabel !== "" && (
-                  <Link
-                    to="/pages-menu/about-us-v1"
-                    className="btn-fifteen fw-500 position-relative d-inline-flex align-items-center"
-                  >
-                    <span>{data.buttonLabel}</span>
-                    <img
-                      src="/images/icon/icon_69.svg"
-                      alt={data.illustrationAlt}
-                      className="ms-2"
-                    />
-                  </Link>
-                )}
+                <p className="fs-20 lh-lg mt-35 lg-mt-20">
+                  <strong>Spécifiques :</strong> Gym douce, Gym assise, Relaxation, Méditation, Stretching, Ergonomie, ETP (Éducation Thérapeutique du Patient), etc.
+                  <br /><br />
+                  <strong>Classiques :</strong> Renforcement musculaire, Endurance, Équilibre, Mobilité, Coordination, Reconditionnement physique.
+                </p>
               </div>
               <div
                 className={`col-xl-7 col-lg-6 col-md-8 m-auto order-lg-${
@@ -65,11 +55,12 @@ const FancyBanner = () => {
                 }`}
                 data-aos={data.aos}
               >
-                <div className="illustration-holder md-mt-60">
+                <div className="illustration-holder" style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
                   <img
                     src={data.illustration}
                     alt={data.illustrationAlt}
                     className="lazy-img"
+                    style={{ maxHeight: "100%", maxWidth: "100%", objectFit: "contain" }}
                   />
                 </div>
               </div>

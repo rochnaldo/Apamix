@@ -6,6 +6,7 @@ import AppBanner from "../../components/home-page/home-1/AppBanner";
 import Banner from "../../components/home-page/home-1/Banner";
 import Block from "../../components/home-page/home-1/Block";
 import Blog from "../../components/home-page/home-1/Blog";
+import Blog2 from "../../components/home-page/home-5/Blog";
 import ContactForm from "../../components/home-page/home-1/ContactForm";
 import Feature from "../../components/home-page/home-1/Feature";
 import Partner from "../../components/home-page/home-2/Partner.jsx"
@@ -21,6 +22,8 @@ import Pricing from "@/components/home-page/home-2/Pricing.jsx";
 import TeamV1 from "@/pages/pages-menu/team-v1.jsx";
 import Team5 from "../../components/team/Team5";
 import CallToAction from "@/components/team/CallToAction.jsx";
+import PricingV2 from "@/pages/pages-menu/pricing-v2.jsx";
+import FancyBanner from "@/components/home-page/home-2/FancyBanner.jsx";
 
 const Insurance = () => {
   return (
@@ -41,8 +44,8 @@ const Insurance = () => {
             className="hero-banner-three position-relative pt-200 md-pt-150"
             data-aos="fade-right"
         >
-          <div className="container" style={{ transform: "translateY(-20px)" }}>
-            <div className="row" >
+          <div className="container" style={{transform: "translateY(-20px)"}}>
+            <div className="row">
               <div className="col-lg-6">
                 <Hero/>
               </div>
@@ -79,7 +82,7 @@ const Insurance = () => {
 			--> */}
         <div className="fancy-feature-thirtyFour mt-50">
           <div className="container">
-          <div className="row gx-xxl-5">
+            <div className="row gx-xxl-5">
               {/*<Feature/>*/}
             </div>
           </div>
@@ -121,50 +124,7 @@ const Insurance = () => {
 			=====================================================
 			*/}
 
-        <div className="pricing-section-two position-relative pt-100 pb-150 mt-180 lg-mt-120 lg-pt-70 lg-pb-70">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-8 col-md-9 m-auto">
-                <div
-                    className="title-style-four text-center pb-30 lg-pb-40 "
-                    data-aos="fade-up"
-                >
-                  <h2 className="main-title fw-500 tx-dark m0 fs-1">
-                    Découvrez nos deux offres <span>uniques</span> en activité physique adaptée,
-                    parfaitement adaptées à tous les niveaux et besoins.
-                  </h2>
-                </div>
-                {/* /.title-style-four */}
-              </div>
-            </div>
-            <div className="wrapper pricing-table-area-four m-auto pt-10 lg-pt-30 mb-4">
-              <div className="row d-flex align-items-center justify-content-center">
-                <Pricing/>
-
-              </div>
-            </div>
-          </div>
-          <img
-              src="/images/shape/shape_52.svg"
-              alt="shape"
-              className="lazy-img shapes shape-one"
-          />
-          <img
-              src="/images/shape/shape_53.svg"
-              alt="shape"
-              className="lazy-img shapes shape-two"
-          />
-          <img
-              src="/images/shape/shape_54.svg"
-              alt="shape"
-              className="lazy-img shapes shape-three"
-          />
-          <img
-              src="/images/shape/shape_55.svg"
-              alt="shape"
-              className="lazy-img shapes shape-four"
-          />
-        </div>
+        <FancyBanner />
 
 
         <div className="team-section-four mt-150 lg-mt-90">
