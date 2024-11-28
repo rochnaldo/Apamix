@@ -51,7 +51,7 @@ const Entreprises = () => {
                               data-aos="fade-up"
                           >
                               <h2 className="main-title fw-500 tx-dark m0 fs-1">
-                                  Investissez dans le bien-être de votre entreprise
+                              Nos Services Pour les Professionnels :
                               </h2>
                           </div>
                       </div>

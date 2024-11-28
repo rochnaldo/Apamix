@@ -86,13 +86,92 @@ const Coachs = () => {
                 </div>
               </div>
               <div className="col-lg-5 ms-auto aos fadeInRight">
-                <p className="text-lg text-center text-lg-start md-pt-30 m0">
-                  Nous sommes à la recherche d'un professionnel passionné et compétent pour rejoindre notre équipe en
-                  tant qu’Enseignant en Activité Physique Adaptée. Si vous êtes motivé par l'idée d'aider les individus
-                  à atteindre leurs objectifs de santé et de bien-être à travers une approche personnalisée, cette
-                  opportunité pourrait être la vôtre.
-                </p>
-              </div>
+  <div
+    style={{
+      height: "500px",
+      overflowY: "auto",
+      padding: "20px",
+      border: "1px solid #eaeaea",
+      borderRadius: "8px",
+      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    }}
+  >
+    <p className="text-lg text-center text-lg-start md-pt-30 m0">
+      <span style={{ fontWeight: "bold", textDecoration: "underline", color: "#FF3294" }}>
+        Passion pour l’Activité Physique Adaptée :
+      </span>{" "}
+      Un véritable enthousiasme pour aider les personnes à améliorer leur bien-être physique et mental.
+    </p>
+    <p className="text-lg text-center text-lg-start md-pt-30 m0">
+      <span style={{ fontWeight: "bold", textDecoration: "underline", color: "#9DE5FF" }}>
+        Compétence Technique et Expertise :
+      </span>{" "}
+      Une solide connaissance des techniques d’activité physique adaptée et des compétences en réhabilitation
+      physique.
+    </p>
+    <p className="text-lg text-center text-lg-start md-pt-30 m0">
+      <span style={{ fontWeight: "bold", textDecoration: "underline", color: "#FF343E" }}>
+        Empathie et Patience :
+      </span>{" "}
+      La capacité à comprendre les besoins individuels des clients et à les accompagner avec bienveillance et
+      patience.
+    </p>
+    <p className="text-lg text-center text-lg-start md-pt-30 m0">
+      <span style={{ fontWeight: "bold", textDecoration: "underline", color: "#FFC74D" }}>
+        Excellentes Compétences en Communication :
+      </span>{" "}
+      La capacité à expliquer clairement les exercices, à motiver les clients et à établir des relations de
+      confiance.
+    </p>
+    <p className="text-lg text-center text-lg-start md-pt-30 m0">
+      <span style={{ fontWeight: "bold", textDecoration: "underline", color: "#FF3294" }}>
+        Capacité d’Adaptation :
+      </span>{" "}
+      La flexibilité pour ajuster les programmes en fonction des besoins variés des clients et des situations.
+    </p>
+    <p className="text-lg text-center text-lg-start md-pt-30 m0">
+      <span style={{ fontWeight: "bold", textDecoration: "underline", color: "#9DE5FF" }}>
+        Esprit d’Équipe :
+      </span>{" "}
+      Un bon collaborateur, capable de travailler en harmonie avec d'autres professionnels pour offrir les
+      meilleurs résultats.
+    </p>
+    <p className="text-lg text-center text-lg-start md-pt-30 m0">
+      <span style={{ fontWeight: "bold", textDecoration: "underline", color: "#FF343E" }}>
+        Sens de l’Organisation :
+      </span>{" "}
+      Une bonne gestion du temps et des ressources pour planifier et exécuter les séances de manière efficace.
+    </p>
+    <p className="text-lg text-center text-lg-start md-pt-30 m0">
+      <span style={{ fontWeight: "bold", textDecoration: "underline", color: "#FFC74D" }}>
+        Compétences en Évaluation et Analyse :
+      </span>{" "}
+      La capacité à réaliser des bilans de santé, à évaluer les progrès des clients et à ajuster les programmes
+      en conséquence.
+    </p>
+    <p className="text-lg text-center text-lg-start md-pt-30 m0">
+      <span style={{ fontWeight: "bold", textDecoration: "underline", color: "#FF3294" }}>
+        Sens de l’Initiative et Créativité :
+      </span>{" "}
+      La capacité à proposer des idées nouvelles et à créer des programmes innovants qui répondent aux besoins
+      des clients.
+    </p>
+    <p className="text-lg text-center text-lg-start md-pt-30 m0">
+      <span style={{ fontWeight: "bold", textDecoration: "underline", color: "#9DE5FF" }}>
+        Compétences en Gestion de Stress :
+      </span>{" "}
+      La capacité à gérer des situations stressantes et à rester calme et professionnel en toutes circonstances.
+    </p>
+    <p className="text-lg text-center text-lg-start md-pt-30 m0">
+      <span style={{ fontWeight: "bold", textDecoration: "underline", color: "#FF343E" }}>
+        Respect de l’Éthique Professionnelle :
+      </span>{" "}
+      Un engagement ferme à respecter les normes éthiques et à garantir la confidentialité des informations des
+      clients.
+    </p>
+  </div>
+</div>
+
             </div>
           </div>
           <div className="container pt-120 lg-pt-80 md-pt-60">

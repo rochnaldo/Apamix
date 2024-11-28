@@ -17,6 +17,8 @@ import CounterSection from "@/components/home-page/home-13/Counter.jsx";
 import Features from "@/components/home-page/home-4/Features.jsx";
 import AboutCeo from "@/components/about/AboutCeo.jsx";
 import Counter2 from "@/components/about/Counter2.jsx";
+import Testimonial from "@/components/services/Testimonial";
+import Testimonials from "../pages-menu/testimonials";
 
 const Particuliers = () => {
   return (
@@ -116,6 +118,29 @@ const Particuliers = () => {
                   </div>
               </div>
           </div>
+
+      
+        <div className="container" style={{marginTop: 40}}>
+          <div className="title-style-one text-center mb-50 lg-mb-20">
+          <h2 className="main-title fw-500 tx-dark m0 fs-1">
+          Témoignages de Nos Clients</h2>
+          </div>
+        </div>
+        {/* End .container */}
+        <div className="inner-content">
+          <div className="slider-wrapper">
+            <div className="feedback_slider_seven">
+              <Testimonial />
+            </div>
+            {/* /.feedback_slider_seven */}
+          </div>
+          {/* /.slider-wrapper */}
+        </div>
+        {/* /.inner-content */}
+    
+
+
+
           <div className="footer-style-ten theme-basic-footer zn2 position-relative mt-40">
           <div className="container">
             <div className="inner-wrapper">
@@ -154,6 +179,7 @@ const Particuliers = () => {
           />
         </div>
         {/* /.footer-style-ten */}
+
       </>
   );
 };

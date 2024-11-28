@@ -51,6 +51,16 @@ const Insurance = () => {
               </div>
             </div>
           </div>
+          <h3
+            style={{
+              textAlign: "center",
+              fontSize: "1.5rem",
+              textDecoration: "underline",
+              color: 'grey',
+            }}
+          >
+          Nos partenaires
+          </h3>
 
           <div className="partner-section-four position-relative pt-100 sm-pt-70">
             <div className="wrapper m-auto">
