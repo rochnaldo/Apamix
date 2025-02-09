@@ -26,7 +26,7 @@ const MainMenu = () => {
               <li className="d-block d-lg-none">
                   <div className="logo">
                       <Link to="/" className="d-block">
-                          <img src="/images/logo/logo_01.png" alt="logo"/>
+                          <img src="/images/logo/Apamix_title.png" alt="logo"/>
                       </Link>
                   </div>
               </li>
@@ -77,8 +77,8 @@ const MainMenu = () => {
               {/* End li (portfolio) */}
               <li className="nav-item">
                   <Link
-                      to="/book"
-                      className={isActive("/book")
+                      to="/contact/contact-v1"
+                      className={isActive("/contact/contact-v1")
                           ? "nav-link active-menu"
                           : "nav-link"}
                   >

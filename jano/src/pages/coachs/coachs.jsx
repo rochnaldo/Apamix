@@ -211,19 +211,18 @@ const Coachs = () => {
             <div className="inner-wrapper">
               <div className="row justify-content-between">
                 <div className="col-lg-3 footer-intro mb-40">
-                  <div className="logo">
-                    <Link to="/">
-                      <img src="/images/logo/logo_02.png" alt="logo" width={95}/>
-                    </Link>
-                  </div>
-                  <p className="text-white opacity-75 fs-18 mt-15 mb-45 lg-mb-10">
-                    Best Insurance Company.
-                  </p>
-                  <p className="text-white opacity-50 fs-15 m0 d-none d-lg-block">
-                    © {new Date().getFullYear()} - {new Date().getFullYear() + 1}{" "}
-                    jano inc.
-                  </p>
+                <div className="logo">
+                  <Link to="/">
+                    <img src="/images/logo/Apamix_title11.png" alt="logo" width={95}/>
+                  </Link>
                 </div>
+                <p className="text-white opacity-75 fs-18 mt-15 mb-45 lg-mb-10">
+                  Entreprise Française.
+                </p>
+                <p className="text-white opacity-50 fs-15 m0 d-none d-lg-block">
+                  © {new Date().getFullYear()} - {new Date().getFullYear() + 1} 
+                </p>
+              </div>
                 <Footer/>
               </div>
             </div>

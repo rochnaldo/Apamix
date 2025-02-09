@@ -30,7 +30,7 @@ const DefaulHeader = () => {
         <div className="d-flex align-items-center justify-content-between">
           <div className="logo order-lg-0">
             <Link to="/" className="d-block">
-              <img src="/images/logo/logo_01.png" alt="logo" />
+              <img src="/images/logo/Apamix_title.png" alt="logo" />
             </Link>
           </div>
           {/* End logo */}

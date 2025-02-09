@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const AboutCeo = () => {
   const [currentProductIndex, setCurrentProductIndex] = useState(0);
@@ -122,7 +123,11 @@ const AboutCeo = () => {
           <p className="fs-18 mb-10 pt-30 lg-pt-20">
             <span className="fw-500 tx-dark">{product.rating.text}</span>
           </p>
-          <button type="button" className="btn-twentyOne fw-500 tran3s">Prendre contact</button>
+          <button type="button" className="btn-twentyOne fw-500 tran3s">
+            <Link to="/contact/contact-v1" className="text-white text-decoration-none">
+              Prendre contact
+            </Link>
+          </button>
 
         </div>
       </div>
