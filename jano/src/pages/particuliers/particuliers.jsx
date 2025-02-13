@@ -17,8 +17,7 @@ import CounterSection from "@/components/home-page/home-13/Counter.jsx";
 import Features from "@/components/home-page/home-4/Features.jsx";
 import AboutCeo from "@/components/about/AboutCeo.jsx";
 import Counter2 from "@/components/about/Counter2.jsx";
-import Testimonial from "@/components/services/Testimonial";
-import Testimonials from "../pages-menu/testimonials";
+import Testimonial3 from "../../components/home-page/home-6/Testimonial";
 
 const Particuliers = () => {
   return (
@@ -115,6 +114,15 @@ const Particuliers = () => {
                       <div className="row align-items-center">
                           <AboutCeo/>
                       </div>
+                  </div>
+              </div>
+          </div>
+
+          
+          <div className="fancy-feature-four position-relative pt-150 lg-pt-90">
+              <div className="container">
+                  <div className="row align-items-center">
+                      <Testimonial3/>
                   </div>
               </div>
           </div>

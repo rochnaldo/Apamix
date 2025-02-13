@@ -137,44 +137,6 @@ const Insurance = () => {
         <FancyBanner />
 
 
-        <div className="team-section-four mt-150 lg-mt-90">
-          <div className="container">
-            <div className="row align-items-end">
-              <div className="col-xxl-6 col-md-7" data-aos="fade-right">
-                <div className="title-style-one text-center text-md-start">
-                  <div className="sc-title text-uppercase">OUR TEAM</div>
-                  <h2 className="main-title fw-500 tx-dark">
-                    Découvrez notre équipe
-                  </h2>
-                </div>
-                {" "}
-                {/* /.title-style-one */}
-              </div>
-              <div
-                  className="col-xxl-6 col-md-5 text-center text-md-end"
-                  data-aos="fade-left"
-              >
-                <a href="/coachs" className="btn-one fw-500 sm-mt-30">
-                  Voir toute l'équipe
-                </a>
-              </div>
-            </div>
-            {" "}
-            {/* /.row */}
-            <div className="wrapper border-bottom pt-80 lg-pt-50">
-              <div className="row gx-xxl-5">
-                <Team5/>
-              </div>
-              {/* /.row */}
-              {/*<CallToAction />*/}
-
-            </div>
-
-          </div>
-          {/* /.container */}
-        </div>
-
-
         {/*
 			=====================================================
 				Footer
