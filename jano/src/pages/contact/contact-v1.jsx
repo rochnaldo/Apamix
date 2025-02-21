@@ -11,6 +11,7 @@ const ContactV1 = () => {
     lastName: "",
     birthDate: "",
     sessionType: "",
+    requestType: "", // Ajout du champ pour le 2e menu déroulant
     phone: "",
     email: "",
   });
@@ -32,7 +33,15 @@ const ContactV1 = () => {
       });
       if (response.ok) {
         alert("Votre demande a été envoyée avec succès.");
-        setFormData({ firstName: "", lastName: "", birthDate: "", sessionType: "", phone: "", email: "" });
+        setFormData({ 
+          firstName: "", 
+          lastName: "", 
+          birthDate: "", 
+          sessionType: "", 
+          requestType: "", // Réinitialisation du champ
+          phone: "", 
+          email: "" 
+        });
       } else {
         alert("Une erreur s'est produite, veuillez réessayer.");
       }
@@ -41,7 +50,6 @@ const ContactV1 = () => {
       alert("Erreur de connexion. Veuillez réessayer.");
     }
   };
-  
 
   return (
     <>
@@ -61,6 +69,7 @@ const ContactV1 = () => {
           </div>
         </div>
       </div>
+
       <div className="contact-section-one mt-60 lg-mt-30">
         <div className="container">
           <div className="row">
@@ -68,31 +77,73 @@ const ContactV1 = () => {
               <form className="form-style-one" onSubmit={handleSubmit}>
                 <div className="messages" />
                 <div className="row controls">
+                  
+                  {/* Prénom */}
                   <div className="col-12">
                     <div className="input-group-meta form-group mb-35">
                       <label className="d-block">Prénom*</label>
-                      <input type="text" placeholder="Votre prénom" name="firstName" value={formData.firstName} onChange={handleChange} required />
+                      <input 
+                        type="text" 
+                        placeholder="Votre prénom" 
+                        name="firstName" 
+                        value={formData.firstName} 
+                        onChange={handleChange} 
+                        required 
+                      />
                       <div className="help-block with-errors" />
                     </div>
                   </div>
+
+                  {/* Nom */}
                   <div className="col-12">
                     <div className="input-group-meta form-group mb-35">
                       <label className="d-block">Nom*</label>
-                      <input type="text" placeholder="Votre nom" name="lastName" value={formData.lastName} onChange={handleChange} required />
+                      <input 
+                        type="text" 
+                        placeholder="Votre nom" 
+                        name="lastName" 
+                        value={formData.lastName} 
+                        onChange={handleChange} 
+                        required 
+                      />
                       <div className="help-block with-errors" />
                     </div>
                   </div>
+
+                  {/* Date de naissance */}
                   <div className="col-12">
                     <div className="input-group-meta form-group mb-35">
                       <label className="d-block">Date de naissance*</label>
-                      <input type="date" name="birthDate" value={formData.birthDate} onChange={handleChange} required />
+                      <input 
+                        type="date" 
+                        name="birthDate" 
+                        value={formData.birthDate} 
+                        onChange={handleChange} 
+                        max={new Date().toISOString().split("T")[0]} // Empêche de sélectionner une date future
+                        required 
+                      />
                       <div className="help-block with-errors" />
                     </div>
                   </div>
+
+                  {/* Séance souhaitée (1er menu déroulant) */}
                   <div className="col-12">
                     <div className="input-group-meta form-group mb-35">
                       <label className="d-block">Séance souhaitée*</label>
-                      <select name="sessionType" value={formData.sessionType} onChange={handleChange} required>
+                      <select 
+                        name="sessionType" 
+                        value={formData.sessionType} 
+                        onChange={handleChange} 
+                        required
+                        style={{
+                          width: "100%",
+                          padding: "10px",
+                          borderRadius: "8px",
+                          border: "1px solid #ccc",
+                          backgroundColor: "#fff",
+                          cursor: "pointer"
+                        }}
+                      >
                         <option value="">Sélectionner une séance</option>
                         <option value="individuelle">Séance individuelle</option>
                         <option value="collective">Séance collective</option>
@@ -100,30 +151,65 @@ const ContactV1 = () => {
                       <div className="help-block with-errors" />
                     </div>
                   </div>
+
+                  {/* Type de demande (2e menu déroulant) */}
+                  <div className="col-12">
+                    <div className="input-group-meta form-group mb-35">
+                      <label className="d-block">Type de demande*</label>
+                      <select 
+                        name="requestType" 
+                        value={formData.requestType} 
+                        onChange={handleChange} 
+                        required
+                        style={{
+                          width: "100%",
+                          padding: "10px",
+                          borderRadius: "8px",
+                          border: "1px solid #ccc",
+                          backgroundColor: "#fff",
+                          cursor: "pointer"
+                        }}
+                      >
+                        <option value="">Sélectionner une demande</option>
+                        <option value="information">Demande d’information</option>
+                        <option value="devis">Demande de devis</option>
+                        <option value="rdv">Prise de RDV pour une séance</option>
+                        <option value="livret">Demande de livret personnalisé</option>
+                        <option value="suivi_dietetique">Demande de suivi diététique</option>
+                        <option value="autres">Autres</option>
+                      </select>
+                      <div className="help-block with-errors" />
+                    </div>
+                  </div>
+
+                  {/* Numéro de téléphone */}
                   <div className="col-12">
                     <div className="input-group-meta form-group mb-35">
                       <label className="d-block">Numéro de téléphone*</label>
-                      <input type="tel" placeholder="Votre numéro" name="phone" value={formData.phone} onChange={handleChange} required />
+                      <input 
+                        type="tel" 
+                        placeholder="Votre numéro" 
+                        name="phone" 
+                        value={formData.phone} 
+                        onChange={handleChange} 
+                        required 
+                      />
                       <div className="help-block with-errors" />
                     </div>
                   </div>
-                  <div className="col-12">
-                    <div className="input-group-meta form-group mb-40">
-                      <label className="d-block">Email*</label>
-                      <input type="email" placeholder="Votre email" name="email" value={formData.email} onChange={handleChange} required />
-                      <div className="help-block with-errors" />
-                    </div>
-                  </div>
+
+                  {/* Email */}
                   <div className="col-12">
                     <button className="btn-one fw-500 w-100 text-uppercase fs-14 d-block">Valider</button>
                   </div>
+
                 </div>
               </form>
             </div>
           </div>
         </div>
       </div>
-      <br/><br/><br/><br/>
+
       <div className="footer-style-ten theme-basic-footer zn2 position-relative mt-40">
         <div className="container">
           <div className="inner-wrapper">

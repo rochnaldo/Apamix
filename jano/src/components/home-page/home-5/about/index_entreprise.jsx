@@ -1,5 +1,6 @@
 import Counter from "./Counter";
-import ImgGallery from "./ImgGallery";
+import ImgGallery2 from "./ImgGallery2";
+
 import Intro2 from "./Intro_entreprise.jsx";
 import index from "@/components/home-page/home-5/about/index.jsx";
 
@@ -7,7 +8,7 @@ const index_entreprise = () => {
   return (
     <div className="row align-items-center">
       <div className="col-lg-6 position-relative order-lg-first">
-        <ImgGallery />
+        <ImgGallery2 />
         {/* /.img-gallery */}
       </div>
       {/* End .col-lg-6 */}

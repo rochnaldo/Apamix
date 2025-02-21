@@ -66,36 +66,54 @@ const Testimonial = () => {
   };
 
   return (
-    <>
+    <div className="container mt-5">
+      {/* Titre centré */}
       <h2 className="text-center my-4">Nos retours Clients</h2>
-      <h4 className="text-center my-2">Chez APAMIX, on est ravis de voir nos clients retrouver le sourire et l’énergie grâce à nos séances d’activité physique adaptée. Voici quelques retours de ceux qui nous ont fait confiance</h4>
-      <div className="feedback_slider_two">
-        <Slider ref={sliderRef} {...settings} arrows={false}>
-          {testimonials.map((testimonial) => (
-            <div className="item p-4" key={testimonial.id}>
-              <div className="feedback-block-two text-center bg-light p-4 rounded shadow-sm">
-                <p className="mb-4 font-italic">"{testimonial.text}"</p>
-                <h4 className="m0 text-primary">{testimonial.name}</h4>
-                <span className="opacity-75 d-block mt-2">{testimonial.role}</span>
-              </div>
-            </div>
-          ))}
-        </Slider>
+      <h4 className="text-center my-2">
+        Chez APAMIX, on est ravis de voir nos clients retrouver le sourire et l’énergie grâce à nos séances d’activité physique adaptée. 
+        Voici quelques retours de ceux qui nous ont fait confiance.
+      </h4>
+
+      {/* Contenu en deux colonnes : Vidéo à gauche, Témoignages à droite */}
+      <div className="row align-items-center mt-4">
+        
+        {/* Vidéo à gauche */}
+        <div className="col-md-6 text-center">
+          <video width="100%" height="600px" controls>
+            <source src="/videos/temoignages.MOV" type="video/mp4" />
+            Votre navigateur ne supporte pas la vidéo.
+          </video>
+        </div>
+
+        {/* Témoignages à droite */}
+        <div className="col-md-6">
+          <div className="feedback_slider_two">
+            <Slider ref={sliderRef} {...settings} arrows={false}>
+              {testimonials.map((testimonial) => (
+                <div className="item p-4" key={testimonial.id}>
+                  <div className="feedback-block-two text-center bg-light p-4 rounded shadow-sm">
+                    <p className="mb-4 font-italic">"{testimonial.text}"</p>
+                    <h4 className="m0 text-primary">{testimonial.name}</h4>
+                    <span className="opacity-75 d-block mt-2">{testimonial.role}</span>
+                  </div>
+                </div>
+              ))}
+            </Slider>
+          </div>
+
+          {/* Flèches de navigation */}
+          <ul className="slider-arrows slick-arrow-two d-flex justify-content-center style-none mt-3">
+            <li className="prev_f2 slick-arrow tran3s mx-3" onClick={goToPrev}>
+              <i className="bi bi-arrow-left" />
+            </li>
+            <li className="next_f2 slick-arrow tran3s mx-3" onClick={goToNext}>
+              <i className="bi bi-arrow-right" />
+            </li>
+          </ul>
+        </div>
+
       </div>
-      {/* /.feedback_slider_two */}
-
-      <ul className="slider-arrows slick-arrow-two d-flex justify-content-center style-none mt-35">
-        <li className="prev_f2 slick-arrow tran3s" onClick={goToPrev}>
-          <i className="bi bi-arrow-left" />
-        </li>
-        {/* End slick prev arrow end */}
-
-        <li className="next_f2 slick-arrow tran3s" onClick={goToNext}>
-          <i className="bi bi-arrow-right" />
-        </li>
-        {/* End slick next arrow end */}
-      </ul>
-    </>
+    </div>
   );
 };
 

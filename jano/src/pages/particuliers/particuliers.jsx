@@ -87,27 +87,6 @@ const Particuliers = () => {
                   </div>
 
               </div>
-              <div className="image-container">
-                <img
-                    src="/images/fav-icon/running.png"
-                    alt="Running icon"
-                    className="lazy-img shapes shape-one"
-                    style={{ width: "50px", height: "50px", margin: "5px" }}
-                />
-                <img
-                    src="/images/fav-icon/playtime.png"
-                    alt="Playtime icon"
-                    className="lazy-img shapes shape-two"
-                    style={{ width: "50px", height: "50px", margin: "5px" }}
-                />
-                <img
-                    src="/images/fav-icon/old-man.png"
-                    alt="Old man icon"
-                    className="lazy-img shapes shape-three"
-                    style={{ width: "50px", height: "50px", margin: "5px" }}
-                />
-
-              </div>
 
               <div className="fancy-feature-two position-relative pt-150 lg-pt-90">
                   <div className="container">

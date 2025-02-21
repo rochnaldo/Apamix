@@ -1,57 +1,52 @@
-import { useState } from "react";
-import ModalVideo from "react-modal-video";
+import { useState, useEffect } from "react";
+
+const images = [
+  "/images/Menu/pa4.jpeg",
+  "/images/Menu/pa2.jpeg",
+  "/images/Menu/pa3.jpeg",
+];
 
 const ImgGallery = () => {
-  const [isOpen, setOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000); // Changement toutes les 3 secondes
+
+    return () => clearInterval(interval); // Nettoyage de l'intervalle
+  }, []);
 
   return (
-    <>
-      <ModalVideo
-        channel="youtube"
-        autoplay
-        isOpen={isOpen}
-        videoId="rDYdeq3JW_E"
-        onClose={() => setOpen(false)}
-      />
-
-      <div className="img-gallery md-mt-60 ">
-        <div className="row align-items-center" data-aos="fade-right">
-          <div className="col-6">
-            <img
-              src="/images/media/img_79.jpg"
-              alt="media"
-              className="lazy-img mt-40 mb-40 lg-mt-20 lg-mb-20"
-            />
-            <img
-              src="/images/media/img_80.jpg"
-              alt="media"
-              className="lazy-img ms-auto mt-40 mb-40 lg-mt-20 lg-mb-20"
-            />
-          </div>
-          <div className="col-6">
-            <img
-              src="/images/media/img_81.jpg"
-              alt="media"
-              className="lazy-img mt-40 mb-40 lg-mt-20 lg-mb-20"
-            />
-          </div>
-        </div>
-        {/* End .row */}
-
-        <button
-          className="fancybox video-icon rounded-circle tran3s d-flex align-items-center justify-content-center"
-          onClick={() => setOpen(true)}
-        >
-          <i className="fas fa-play" />
-        </button>
+    <div 
+      className="img-gallery md-mt-60 text-center"
+      style={{ 
+        width: "100%", 
+        height: "800px", // Hauteur fixe du bloc
+        position: "relative",
+        overflow: "hidden",
+        borderRadius: "10px"
+      }}
+    >
+      {images.map((img, index) => (
         <img
-          src="/images/shape/shape_163.svg"
-          alt="shape"
-          className="lazy-img shapes shape-two"
+          key={index}
+          src={img}
+          alt="Diaporama"
+          className="lazy-img"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover", // Remplit sans distorsion
+            position: "absolute",
+            top: 0,
+            left: 0,
+            opacity: index === currentImageIndex ? 1 : 0,
+            transition: "opacity 1s ease-in-out"
+          }}
         />
-        <div className="shapes shape-three" />
-      </div>
-    </>
+      ))}
+    </div>
   );
 };
 
