@@ -1,0 +1,152 @@
+/* ✅ LOGO RESPONSIVE */
+.logo-responsive {
+  width: 90%;
+  max-width: 400px; /* Taille max sur mobile */
+  border-radius: 12px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .text-mobile-white {
+    color: white;
+  }
+}
+
+/* ✅ Agrandir le logo sur desktop */
+@media (min-width: 1024px) {
+  .logo-responsive {
+    max-width: 800px;
+    margin-left: -20px;
+  }
+}
+
+/* ✅ STYLE DU TITRE "À propos de la fondatrice" */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 50px;
+  color: #333;
+}
+
+/* ✅ Ajustement du titre sur mobile */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+}
+
+/* ✅ STYLE DU BOUTON "Lire la suite" SOUS FORME DE LIEN */
+.read-more-btn {
+  background: none;
+  border: none;
+  color: #e91e63;
+  font-size: 1rem;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 5px;
+  transition: color 0.3s ease-in-out;
+}
+
+.read-more-btn:hover {
+  color: #c2185b;
+}
+
+/* ✅ CORRECTIONS POUR MOBILE */
+@media (max-width: 768px) {
+  /* ✅ TEXTE & TITRES */
+  .text-lg {
+    font-size: 1rem !important;
+    line-height: 1.4;
+    padding: 0 10px;
+  }
+
+  /* ✅ ASSURE QUE L’IMAGE RESTE SEULE EN HAUT */
+  .fancy-feature-thirtyFive .img-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* ✅ CACHE LES CARTES SUR MOBILE */
+  .fancy-feature-thirtyFive .img-holder .card-style {
+    display: none !important;
+  }
+
+  /* ✅ AJUSTEMENT DE L’ESPACEMENT ENTRE LES SECTIONS */
+  .fancy-feature-twentyFour .block-style-four {
+    margin-top: 15px !important; /* Réduction maximale */
+    margin-bottom: 10px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+
+  /* ✅ Suppression des marges sur les containers */
+  .fancy-feature-twentyFour .container {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+
+  /* ✅ Ajustement des titres */
+  .fancy-feature-twentyFour .block-style-four h2.hero-heading {
+    padding-left: 15px !important;
+  }
+
+  .fancy-feature-twentyFour .block-style-four p {
+    margin-left: 15px !important;
+    font-size: 1rem !important;
+  }
+
+  /* ✅ Ajustement des images */
+  .illustration-spacing {
+    max-width: 75%;
+    max-height: 75%;
+    object-fit: contain;
+  }
+
+  /* ✅ Réduction des espaces entre "Nos Services Pour les Professionnels" et "Nos Services Pour les Particuliers" */
+  .fancy-feature-twentyFour .block-style-four:nth-child(2) {
+    margin-bottom: 5px !important; /* Avant : 20px */
+  }
+
+  .fancy-feature-twentyFour .block-style-four:nth-child(3) {
+    margin-top: 5px !important; /* Avant : 10px */
+  }
+
+  /* ✅ Descendre "Sport sur ordonnance" sans toucher à l’image */
+  .col-lg-12.mb-3.text-start {
+    margin-top: 250px !important; /* Avant : 150px → descend encore un peu */
+    margin-bottom: -100px !important;
+    padding: 10px !important;
+  }
+
+  /* ✅ CENTRER L'IMAGE SANS TOUCHER À SA TAILLE */
+  .illustration-holder {
+    display: flex;
+    justify-content: center; /* Centre l’image */
+    align-items: center; /* Centre verticalement */
+    padding-bottom: 5px !important;
+  }
+
+  .illustration-holder img {
+    display: block;
+    margin-left: 50px; /* Assure un centrage parfait */
+    object-fit: contain;
+    margin-bottom: 50;
+  }
+
+  .illustration-holder2 img {
+    display: block;
+    object-fit: contain;
+    margin-left: 20px;
+    margin-bottom: 50;
+  }
+
+  .illustration-holder3 img {
+    display: block;
+    object-fit: contain;
+    margin-bottom: 50;
+    margin-left: 15px;
+  }
+}

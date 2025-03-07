@@ -25,7 +25,7 @@ const Entreprises = () => {
           <Seo pageTitle="Entreprises"/>
           <Header/>
           <div
-              className="hero-banner-three position-relative pb-0 pt-100 md-pt-150"
+              className="hero-banner-three position-relative pb-0 pt-100 md-pt-80"
               data-aos="fade-right"
           >
               {" "}
@@ -33,70 +33,14 @@ const Entreprises = () => {
 
               {/* /.wrapper */}
               <div className="fancy-feature-fortyEight position-relative pb-0">
-                  <div className="container">
-                      <div className="position-relative pb-0 lg-pt-120 lg-pb-110">
-                          <About/>
-                      </div>
-                      {/* /.line-bg-wrapper */}
-                  </div>
-                  {/* /.container */}
-              </div>
+  <div className="container">
+    <div className="position-relative pb-0">
+      <About />
+    </div>
+  </div>
+</div>
           </div>
-          <div className="pricing-section-two position-relative pt-150 pb-150 mt-180 lg-mt-120 lg-pt-70 lg-pb-70 mt-n3">
-              <div className="container">
-                  <div className="row">
-                      <div className="col-lg-8 col-md-9 m-auto">
-                          <div
-                              className="title-style-four text-center pb-70 lg-pb-40 "
-                              data-aos="fade-up"
-                          >
-                              <h2 className="main-title fw-500 tx-dark m0 fs-1">
-                                  Investissez dans le bien-être de votre entreprise
-                              </h2>
-                          </div>
-                      </div>
-                      <div className="row mb-4">
-                          <div className="col-xl-9 m-auto">
-                              <p
-                                  className="text-lg tx-dark text-center lh-lg mt-10 md-mt-20"
-                                  data-aos="fade-up"
-                              >
-                                  Chez Apamix, nous comprenons l'importance de la santé et du bien-être des employés
-                                  pour la productivité et la satisfaction au travail. Nous offrons des solutions sur
-                                  mesure pour soutenir le bien-être de vos employés et favoriser un environnement de
-                                  travail épanouissant.
-                              </p>
-                          </div>
-                      </div>
-                      <div className="fancy-feature-fourteen position-relative mt-3" style={{marginTop: '10px'}}>
-                          <div className="container">
-                              <div className="row">
-                                  <Features/>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <img
-                  src="/images/shape/shape_52.svg"
-                  alt="shape"
-                  className="lazy-img shapes shape-one"
-              />
-              <img
-                  src="/images/shape/shape_53.svg"
-                  alt="shape"
-                  className="lazy-img shapes shape-two"
-              />
-              <img
-                  src="/images/shape/shape_54.svg"
-                  alt="shape"
-                  className="lazy-img shapes shape-three"
-              />
-              <img
-                  src="/images/shape/shape_55.svg"
-                  alt="shape"
-                  className="lazy-img shapes shape-four"
-              />
+          <div className="pricing-section-two position-relative pt-50 pb-150 mt-180 lg-mt-120 lg-pt-70 lg-pb-70 mt-n3">
               <div className="fancy-feature-two position-relative pt-150 lg-pt-90">
                   <div className="container">
                       <div className="row align-items-center">
@@ -112,15 +56,14 @@ const Entreprises = () => {
                 <div className="col-lg-3 footer-intro mb-40">
                   <div className="logo">
                     <Link to="/">
-                      <img src="/images/logo/logo_02.png" alt="logo" width={95}/>
+                      <img src="/images/logo/Apamix_title11.png" alt="logo" width={95}/>
                     </Link>
                   </div>
                   <p className="text-white opacity-75 fs-18 mt-15 mb-45 lg-mb-10">
-                    Best Insurance Company.
+                    Entreprise Française.
                   </p>
                   <p className="text-white opacity-50 fs-15 m0 d-none d-lg-block">
                     © {new Date().getFullYear()} - {new Date().getFullYear() + 1}{" "}
-                    jano inc.
                   </p>
                 </div>
                 <Footer/>

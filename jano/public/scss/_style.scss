@@ -17,6 +17,23 @@
 ====================================================================
 
  ***/
+
+
+.read-more-btn {
+  display: block; /* Assurez-vous que le bouton est un bloc pour le marger correctement */
+  margin-top: 20px; /* Ajustez cette valeur pour ajouter de l'espace au-dessus du bouton */
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+
+.read-more-btn img {
+  width: 20px;
+  height: auto;
+}
+
+
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -6975,6 +6992,9 @@ body .btn-twentySix:hover:after {
 .fancy-feature-thirtyFive .text-wrapper p {
   font-size: 42px;
   line-height: 1.57em;
+  padding-right: 10px;
+  margin-bottom: 20px;
+  position: relative;
 }
 .fancy-feature-thirtyFive .text-wrapper p span {
   text-decoration-line: underline;
@@ -7225,7 +7245,7 @@ body .btn-twentySix:hover:after {
 }
 /*^^^^^^^^^^^^^^^^^^^^^ Feature Section Thirty Eight ^^^^^^^^^^^^^^^^^^^^^^^^*/
 .block-style-seven .list-item li {
-  font-size: 24px;
+  font-size: 16px;
   color: #000;
   margin-bottom: 20px;
   position: relative;
@@ -7282,7 +7302,7 @@ body .btn-twentySix:hover:after {
   position: absolute;
   right: 0;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-10%);
   z-index: 1;
 }
 .fancy-feature-thirtyEight .illustration-holder .shape-one {

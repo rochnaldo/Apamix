@@ -1,32 +1,25 @@
 const BlockContact5 = () => {
   const addressBlocks = [
     {
-      icon: "/images/icon/icon_178.svg",
+      icon: "/images/icon/icon_179.svg",
       title: "Par mail",
       content: "megroche12@gmail.com",
       delay: "100",
     },
     {
-      icon: "/images/icon/icon_179.svg",
+      icon: "/images/icon/icon_114.svg",
       title: "Par téléphone",
       content: "",
       link: "tel:+262 692 001760",
       delay: "200",
     },
-    {
-      icon: "/images/icon/icon_180.svg",
-      title: "Postulez en ligne ",
-      content: "lien vérifié",
-      link: "https://7vio9ivee3w.typeform.com/to/qeWQU57l",
-      delay: "300",
-    },
   ];
 
   return (
-    <>
+    <div className="row justify-content-center"> {/* Centrage horizontal */}
       {addressBlocks.map((block, index) => (
         <div
-          className="col-md-4"
+          className="col-md-4 d-flex justify-content-center"
           key={index}
           data-aos="fade-up"
           data-aos-delay={block.delay}
@@ -52,7 +45,7 @@ const BlockContact5 = () => {
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

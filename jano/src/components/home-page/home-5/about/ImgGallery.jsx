@@ -1,55 +1,72 @@
-import { useState } from "react";
-import ModalVideo from "react-modal-video";
+import { useState, useEffect } from "react";
+
+const images = [
+  "/images/Menu/pa2.jpeg",
+  "/images/Menu/2.jpeg",
+  "/images/Menu/5.jpeg",
+];
 
 const ImgGallery = () => {
-  const [isOpen, setOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
-      <ModalVideo
-        channel="youtube"
-        autoplay
-        isOpen={isOpen}
-        videoId="rDYdeq3JW_E"
-        onClose={() => setOpen(false)}
-      />
+      <style>
+        {`
+          .img-gallery {
+            width: 100%;
+            height: 700px; /* Réduction de la hauteur sur desktop */
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+          }
 
-      <div className="img-gallery md-mt-60 ">
-        <div className="row align-items-center" data-aos="fade-right">
-          <div className="col-6">
-            <img
-              src="/images/media/img_79.jpg"
-              alt="media"
-              className="lazy-img mt-40 mb-40 lg-mt-20 lg-mb-20"
-            />
-            <img
-              src="/images/media/img_80.jpg"
-              alt="media"
-              className="lazy-img ms-auto mt-40 mb-40 lg-mt-20 lg-mb-20"
-            />
-          </div>
-          <div className="col-6">
-            <img
-              src="/images/media/img_81.jpg"
-              alt="media"
-              className="lazy-img mt-40 mb-40 lg-mt-20 lg-mb-20"
-            />
-          </div>
-        </div>
-        {/* End .row */}
+          .img-gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+          }
 
-        <button
-          className="fancybox video-icon rounded-circle tran3s d-flex align-items-center justify-content-center"
-          onClick={() => setOpen(true)}
-        >
-          <i className="fas fa-play" />
-        </button>
-        <img
-          src="/images/shape/shape_163.svg"
-          alt="shape"
-          className="lazy-img shapes shape-two"
-        />
-        <div className="shapes shape-three" />
+          .img-gallery img.active {
+            opacity: 1;
+          }
+
+          @media (max-width: 768px) {
+            .img-gallery {
+              height: 300px; /* Hauteur réduite sur mobile */
+            }
+          }
+
+          @media (max-width: 576px) {
+            .img-gallery {
+              height: 250px; /* Hauteur encore plus réduite sur très petits écrans */
+            }
+          }
+        `}
+      </style>
+
+      <div className="img-gallery">
+        {images.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt="Diaporama"
+            className={index === currentImageIndex ? "active" : ""}
+          />
+        ))}
       </div>
     </>
   );

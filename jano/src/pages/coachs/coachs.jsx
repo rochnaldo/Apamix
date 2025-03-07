@@ -29,44 +29,87 @@ const Coachs = () => {
         <Header/>
 
         <div
-            className="hero-banner-three position-relative pb-0 pt-100 md-pt-150"
-            data-aos="fade-right"
-        >
+              className="hero-banner-three position-relative pb-0 md-pt-10 pt-100"
+              data-aos="fade-right"
+          >
+              {" "}
+              {/* /.container */}
+
+              {/* /.wrapper */}
+              <style>
+  {`
+    .fancy-feature-fortyEight {
+      padding-top: 50px; /* Réduction de l'espace en haut */
+      padding-bottom: 0;
+    }
+
+    .fancy-feature-fortyEight .container {
+      padding-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .fancy-feature-fortyEight {
+        padding-top: 30px; /* Encore plus réduit sur mobile */
+      }
+    }
+
+    @media (max-width: 576px) {
+      .fancy-feature-fortyEight {
+        padding-top: 20px; /* Ultra compact pour petits écrans */
+      }
+    }
+  `}
+</style>
+
           <div className="feedback-section-fourteen position-relative zn2">
             <div className="container">
               <div className="position-relative zn2 pt-30 pb-18 lg-pt-120 lg-pb-80">
                 <div className="row">
-                  <div className="col-md-6" data-aos="fade-right">
-                    <div className="title-style-five">
-                      <h2 className="main-title hero-heading fw-bold">
-                        Nous recrutons des <span className="gradient-text">Coachs</span>
-                      </h2>
-                    </div>
-                    <div className="mt-60 lg-mt-40 ps-xl-0 ms-xl-2">
-                      <div className="feedback_slider_eleven">
-                        <Testimonial/>
-                      </div>
-                    </div>
-                  </div>
+                <div className="col-md-6" data-aos="fade-right">
+  <div className="title-style-five">
+    <h2 className="main-title hero-heading fw-bold">
+      Nous recrutons des <span className="gradient-text">Coachs</span>
+    </h2>
+  </div>
 
-                  <div className="col-xl-6 col-lg-5 col-md-6 ms-auto">
-                    <div
-                        className="img-holder position-relative mt-25"
-                        data-aos="fade-left"
-                    >
-                      <img
-                          src="/images/media/img_84.jpg"
-                          alt="Coaching"
-                          className="lazy-img ms-auto"
-                      />
-                      <div
-                          className="rating-box bg-black text-white d-flex flex-column justify-content-center align-items-center"
-                      >
-                        <strong className="fw-500">4.8</strong>
-                        <span>avg rating</span>
-                      </div>
-                    </div>
-                  </div>
+  {/* Image uniquement sur mobile entre le titre et le feedback */}
+  <div className="d-md-none text-center mt-4">
+    <img
+      src="/images/media/img_84.jpg"
+      alt="Coaching"
+      className="lazy-img"
+      style={{ 
+        width: "100%", 
+        maxWidth: "350px",
+        maxHeight: "250px", 
+        objectFit: "cover", 
+        borderRadius: "15px",
+        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)"
+      }} 
+    />
+  </div>
+
+  <div className="mt-60 lg-mt-40 ps-xl-0 ms-xl-2">
+    <div className="feedback_slider_eleven">
+      <Testimonial />
+    </div>
+  </div>
+</div>
+
+{/* Cache l'image originale sur mobile */}
+<div className="col-xl-6 col-lg-5 col-md-6 ms-auto d-none d-md-block">
+  <div className="img-holder position-relative mt-25" data-aos="fade-left">
+    <img
+      src="/images/media/img_84.jpg"
+      alt="Coaching"
+      className="lazy-img ms-auto"
+    />
+    <div className="rating-box bg-black text-white d-flex flex-column justify-content-center align-items-center">
+      <strong className="fw-500">4.8</strong>
+      <span>avg rating</span>
+    </div>
+  </div>
+</div>
                 </div>
               </div>
             </div>
@@ -74,7 +117,7 @@ const Coachs = () => {
         </div>
 
         {/* Nouveau bloc ajouté ici */}
-        <div className="fancy-feature-one pt-120 lg-pt-90">
+        <div className="fancy-feature-one pt-120 lg-pt-10" >
           <div className="container">
             <div className="row align-items-center">
               <div className="col-lg-6 aos fadeInLeft">
@@ -85,14 +128,93 @@ const Coachs = () => {
                   </h2>
                 </div>
               </div>
-              <div className="col-lg-5 ms-auto aos fadeInRight">
-                <p className="text-lg text-center text-lg-start md-pt-30 m0">
-                  Nous sommes à la recherche d'un professionnel passionné et compétent pour rejoindre notre équipe en
-                  tant qu’Enseignant en Activité Physique Adaptée. Si vous êtes motivé par l'idée d'aider les individus
-                  à atteindre leurs objectifs de santé et de bien-être à travers une approche personnalisée, cette
-                  opportunité pourrait être la vôtre.
-                </p>
-              </div>
+              <div className="col-lg-5 ms-auto aos fadeInRight lg-pt-30">
+  <div
+    style={{
+      height: "500px",
+      overflowY: "auto",
+      padding: "20px",
+      border: "1px solid #eaeaea",
+      borderRadius: "8px",
+      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    }}
+  >
+    <p className="text-lg text-center text-lg-start md-pt-30 m0">
+      <span style={{ fontWeight: "bold", textDecoration: "underline", color: "#FF3294" }}>
+        Passion pour l’Activité Physique Adaptée :
+      </span>{" "}
+      Un véritable enthousiasme pour aider les personnes à améliorer leur bien-être physique et mental.
+    </p>
+    <p className="text-lg text-center text-lg-start md-pt-30 m0">
+      <span style={{ fontWeight: "bold", textDecoration: "underline", color: "#9DE5FF" }}>
+        Compétence Technique et Expertise :
+      </span>{" "}
+      Une solide connaissance des techniques d’activité physique adaptée et des compétences en réhabilitation
+      physique.
+    </p>
+    <p className="text-lg text-center text-lg-start md-pt-30 m0">
+      <span style={{ fontWeight: "bold", textDecoration: "underline", color: "#FF343E" }}>
+        Empathie et Patience :
+      </span>{" "}
+      La capacité à comprendre les besoins individuels des clients et à les accompagner avec bienveillance et
+      patience.
+    </p>
+    <p className="text-lg text-center text-lg-start md-pt-30 m0">
+      <span style={{ fontWeight: "bold", textDecoration: "underline", color: "#FFC74D" }}>
+        Excellentes Compétences en Communication :
+      </span>{" "}
+      La capacité à expliquer clairement les exercices, à motiver les clients et à établir des relations de
+      confiance.
+    </p>
+    <p className="text-lg text-center text-lg-start md-pt-30 m0">
+      <span style={{ fontWeight: "bold", textDecoration: "underline", color: "#FF3294" }}>
+        Capacité d’Adaptation :
+      </span>{" "}
+      La flexibilité pour ajuster les programmes en fonction des besoins variés des clients et des situations.
+    </p>
+    <p className="text-lg text-center text-lg-start md-pt-30 m0">
+      <span style={{ fontWeight: "bold", textDecoration: "underline", color: "#9DE5FF" }}>
+        Esprit d’Équipe :
+      </span>{" "}
+      Un bon collaborateur, capable de travailler en harmonie avec d'autres professionnels pour offrir les
+      meilleurs résultats.
+    </p>
+    <p className="text-lg text-center text-lg-start md-pt-30 m0">
+      <span style={{ fontWeight: "bold", textDecoration: "underline", color: "#FF343E" }}>
+        Sens de l’Organisation :
+      </span>{" "}
+      Une bonne gestion du temps et des ressources pour planifier et exécuter les séances de manière efficace.
+    </p>
+    <p className="text-lg text-center text-lg-start md-pt-30 m0">
+      <span style={{ fontWeight: "bold", textDecoration: "underline", color: "#FFC74D" }}>
+        Compétences en Évaluation et Analyse :
+      </span>{" "}
+      La capacité à réaliser des bilans de santé, à évaluer les progrès des clients et à ajuster les programmes
+      en conséquence.
+    </p>
+    <p className="text-lg text-center text-lg-start md-pt-30 m0">
+      <span style={{ fontWeight: "bold", textDecoration: "underline", color: "#FF3294" }}>
+        Sens de l’Initiative et Créativité :
+      </span>{" "}
+      La capacité à proposer des idées nouvelles et à créer des programmes innovants qui répondent aux besoins
+      des clients.
+    </p>
+    <p className="text-lg text-center text-lg-start md-pt-30 m0">
+      <span style={{ fontWeight: "bold", textDecoration: "underline", color: "#9DE5FF" }}>
+        Compétences en Gestion de Stress :
+      </span>{" "}
+      La capacité à gérer des situations stressantes et à rester calme et professionnel en toutes circonstances.
+    </p>
+    <p className="text-lg text-center text-lg-start md-pt-30 m0">
+      <span style={{ fontWeight: "bold", textDecoration: "underline", color: "#FF343E" }}>
+        Respect de l’Éthique Professionnelle :
+      </span>{" "}
+      Un engagement ferme à respecter les normes éthiques et à garantir la confidentialité des informations des
+      clients.
+    </p>
+  </div>
+</div>
+
             </div>
           </div>
           <div className="container pt-120 lg-pt-80 md-pt-60">
@@ -103,7 +225,7 @@ const Coachs = () => {
         </div>
 
         {/*Block de Contact*/}
-        <div className="contact-section-four pt-180 md-pt-150">
+        <div className="contact-section-four pt-180 md-pt-20">
           <div className="container">
             <div className="row">
               <div className="col-xxl-7 col-lg-6 col-md-7 m-auto">
@@ -132,19 +254,18 @@ const Coachs = () => {
             <div className="inner-wrapper">
               <div className="row justify-content-between">
                 <div className="col-lg-3 footer-intro mb-40">
-                  <div className="logo">
-                    <Link to="/">
-                      <img src="/images/logo/logo_02.png" alt="logo" width={95}/>
-                    </Link>
-                  </div>
-                  <p className="text-white opacity-75 fs-18 mt-15 mb-45 lg-mb-10">
-                    Best Insurance Company.
-                  </p>
-                  <p className="text-white opacity-50 fs-15 m0 d-none d-lg-block">
-                    © {new Date().getFullYear()} - {new Date().getFullYear() + 1}{" "}
-                    jano inc.
-                  </p>
+                <div className="logo">
+                  <Link to="/">
+                    <img src="/images/logo/Apamix_title11.png" alt="logo" width={95}/>
+                  </Link>
                 </div>
+                <p className="text-white opacity-75 fs-18 mt-15 mb-45 lg-mb-10">
+                  Entreprise Française.
+                </p>
+                <p className="text-white opacity-50 fs-15 m0 d-none d-lg-block">
+                  © {new Date().getFullYear()} - {new Date().getFullYear() + 1} 
+                </p>
+              </div>
                 <Footer/>
               </div>
             </div>

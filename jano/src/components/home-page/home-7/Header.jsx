@@ -6,15 +6,26 @@ const Header = () => {
   const [navbar, setNavbar] = useState(false);
 
   const changeBackground = () => {
-    if (window.scrollY >= 10) {
+    if (window.innerWidth <= 768) {
+      // Toujours fixe sur mobile
       setNavbar(true);
     } else {
-      setNavbar(false);
+      // Fixe seulement quand on scroll sur desktop
+      if (window.scrollY >= 10) {
+        setNavbar(true);
+      } else {
+        setNavbar(false);
+      }
     }
   };
 
   useEffect(() => {
+    // Appliquer l'effet immédiatement au chargement de la page
+    changeBackground();
+    
+    // Écouter l'événement de scroll
     window.addEventListener("scroll", changeBackground);
+
     return () => {
       window.removeEventListener("scroll", changeBackground);
     };
@@ -30,28 +41,12 @@ const Header = () => {
         <div className="d-flex align-items-center justify-content-between">
           <div className="logo order-lg-0">
             <Link to="/" className="d-block">
-              <img src="/images/logo/logo_01.png" alt="logo" />
+              <img src="/images/logo/Apamix_title11.png" alt="logo" style={{ width: "120px", height: "auto" }} />
             </Link>
           </div>
-          {/*<div className="right-widget ms-auto d-flex align-items-center order-lg-3">*/}
-          {/*  <Link*/}
-          {/*    to="/login"*/}
-          {/*    className="login-btn-two fw-500 d-flex align-items-center me-3"*/}
-          {/*  >*/}
-          {/*    Login*/}
-          {/*  </Link>*/}
-          {/*  <Link*/}
-          {/*    to="/signup"*/}
-          {/*    className="signup-btn-one tran3s position-relative ps-3 d-none d-lg-block"*/}
-          {/*  >*/}
-          {/*    <span className="fw-500">Sign up</span>- It’s Free*/}
-          {/*  </Link>*/}
-          {/*</div>*/}
-          {/* /.right-widget */}
           <MainMenu />
         </div>
       </div>
-      {/* /.inner-content */}
     </header>
   );
 };

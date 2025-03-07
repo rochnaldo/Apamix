@@ -1,22 +1,10 @@
-import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 
-const data = [
-  {
-    count: 20,
-    label: "Country Impacted",
-    unit: "billion",
-    colClass: "col-lg-8 col-sm-6",
-    delay: "100",
-  },
-  {
-    count: 30,
-    label: "Volunteer",
-    unit: "k+",
-    colClass: "col-lg-4 col-sm-6",
-    delay: "200",
-  },
-];
+// Importez vos propres icônes
+import HomeIcon from "/images/fav-icon/house-cleaning.png";
+import OfficeIcon from "/images/fav-icon/house.png";
+import VideoIcon from "/images/fav-icon/videoconference.png";
+import OutdoorIcon from "/images/fav-icon/landscape.png";
 
 const Counter = () => {
   const { ref, inView } = useInView({
@@ -24,37 +12,46 @@ const Counter = () => {
     rootMargin: "-100px 0px",
   });
 
+  const options = [
+    { icon: HomeIcon, label: "À domicile" },
+    { icon: OfficeIcon, label: "En cabinet" },
+    { icon: VideoIcon, label: "En visio" },
+    { icon: OutdoorIcon, label: "En extérieur" },
+  ];
+
   return (
-    <>
-      {data.map((item, index) => (
+    <div className="row justify-content-center" ref={ref}>
+      {options.map((option, index) => (
         <div
-          className={item.colClass}
           key={index}
+          className="d-flex flex-column align-items-center"
           data-aos="fade-up"
-          data-aos-delay={item.delay}
+          data-aos-delay={`${index * 100}`}
+          style={{
+            border: "1px solid #d3d3d3", // Gris clair pour la bordure
+            padding: "8px",
+            borderRadius: "6px",
+            textAlign: "center",
+            backgroundColor: "transparent",
+            margin: "7px",
+            width: "100px", // Taille réduite pour chaque boîte
+          }}
         >
-          <div className="counter-block-three mt-40 md-mt-30" ref={ref}>
-            <div className="main-count fw-500 tx-dark">
-              <CountUp
-                end={inView ? item.count : 0}
-                duration={2.5}
-                separator=","
-              >
-                {({ countUpRef }) => (
-                  <span ref={countUpRef} className="counter">
-                    0
-                  </span>
-                )}
-              </CountUp>
-              {item.unit}
-            </div>
-            <p className="tx-dark fs-18 m0">{item.label}</p>
-          </div>
-          {/* /.counter-block-three */}
+          <img
+            src={option.icon}
+            alt={option.label}
+            style={{ width: "25px", height: "25px", marginBottom: "4px", marginTop: "15px" }} // Réduction de l'icône
+          />
+          <p style={{ marginTop: "8px", fontSize: "12px" }}>{option.label}</p> {/* Réduction de la police */}
         </div>
       ))}
-    </>
+    </div>
   );
 };
 
 export default Counter;
+
+
+
+
+
