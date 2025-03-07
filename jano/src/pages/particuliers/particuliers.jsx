@@ -25,22 +25,46 @@ const Particuliers = () => {
           <Seo pageTitle="Particuliers"/>
           <Header/>
           <div
-              className="hero-banner-three position-relative pb-0 pt-100 md-pt-150"
+              className="hero-banner-three position-relative pb-0 pt-100 md-pt-60"
               data-aos="fade-right"
           >
               {" "}
               {/* /.container */}
 
               {/* /.wrapper */}
-              <div className="fancy-feature-fortyEight position-relative pb-0">
-                  <div className="container">
-                      <div className="position-relative pb-0 lg-pt-120 lg-pb-110">
-                          <About/>
-                      </div>
-                      {/* /.line-bg-wrapper */}
-                  </div>
-                  {/* /.container */}
-              </div>
+              <style>
+  {`
+    .fancy-feature-fortyEight {
+      padding-top: 50px; /* Réduction de l'espace en haut */
+      padding-bottom: 0;
+    }
+
+    .fancy-feature-fortyEight .container {
+      padding-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .fancy-feature-fortyEight {
+        padding-top: 30px; /* Encore plus réduit sur mobile */
+      }
+    }
+
+    @media (max-width: 576px) {
+      .fancy-feature-fortyEight {
+        padding-top: 20px; /* Ultra compact pour petits écrans */
+      }
+    }
+  `}
+</style>
+
+<div className="fancy-feature-fortyEight position-relative pb-0">
+  <div className="container">
+    <div className="position-relative pb-0">
+      <About />
+    </div>
+  </div>
+</div>
+
           </div>
           <div className="pricing-section-two position-relative pt-150 pb-150 mt-180 lg-mt-120 lg-pt-70 lg-pb-70 mt-n3">
           <div className="container">
@@ -50,27 +74,30 @@ const Particuliers = () => {
                               className="title-style-four text-center pb-70 lg-pb-40 "
                               data-aos="fade-up"
                           >
-                              <h2 className="main-title fw-500 tx-dark m0 fs-1">
-                              Vous vous interrogez sur les bienfaits de l’activité physique pour votre santé ? 
-                              </h2>
+                              <h2 
+  className="hero-heading fw-bold m0 text-center"
+  style={{
+    fontSize: "2rem", // Taille de police ajustée
+    lineHeight: "1.4", // Amélioration de l'espacement
+    wordBreak: "break-word", // Évite les débordements
+    maxWidth: "90%", // Pour éviter que le texte soit trop large sur mobile
+    margin: "0 auto", // Centre le texte sur mobile
+  }}
+>
+  Vous vous interrogez sur les bienfaits de l’activité physique
+  pour votre santé ?
+</h2>
                           </div>
                           {/* /.title-style-four */}
                       </div>
                       <div className="row mb-4">
                           <div className="col-xl-9 m-auto">
                           <p
-                            className="text-lg tx-dark text-center lh-lg mt-10 md-mt-20"
+                            className="text-lg d-lg-block"
                             data-aos="fade-up"
                             >
                             Que vous soyez en quête de <strong>bien-être</strong>, confronté à un <strong>handicap</strong>, une <strong>maladie</strong> ou simplement désireux de <strong>prendre soin de votre santé</strong>, <strong>l’activité physique peut transformer votre vie</strong>.
-                            </p>
-
-                            <hr className="my-4" style={{ borderColor: "#dcdcdc" }} />
-
-                            <p
-                            className="text-lg tx-dark text-center lh-lg mt-10 md-mt-20"
-                            data-aos="fade-up"
-                            >
+                            <br /> <br />
                             Pour ceux vivant avec des <strong>problèmes de santé</strong>, l’exercice aide à mieux gérer les symptômes et à améliorer la <strong>qualité de vie</strong>. Aux <strong>sportifs</strong> en quête de progression, un accompagnement personnalisé permet d’atteindre de nouveaux objectifs. 
                             <br /><br />
                             Au-delà de la performance, l’activité physique est un véritable <strong>moteur de bien-être</strong> : elle aide à apaiser l’esprit, rompre l’isolement, et <strong>renforcer la confiance en soi</strong>. Même une petite action, adaptée à vos capacités, peut faire une <strong>différence immense</strong>.
@@ -87,15 +114,15 @@ const Particuliers = () => {
                   </div>
 
               </div>
+          </div>
 
-              <div className="fancy-feature-two position-relative pt-150 lg-pt-90">
+          <div className="fancy-feature-two position-relative pt-150 lg-pt-90">
                   <div className="container">
                       <div className="row align-items-center">
                           <AboutCeo/>
                       </div>
                   </div>
               </div>
-          </div>
 
           
           <div className="fancy-feature-four position-relative pt-150 lg-pt-90">

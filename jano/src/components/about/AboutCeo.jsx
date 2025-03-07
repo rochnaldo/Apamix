@@ -1,9 +1,12 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "../../../AboutCeo.css"
 
 const AboutCeo = () => {
   const [currentProductIndex, setCurrentProductIndex] = useState(0);
   const [activeTab, setActiveTab] = useState("intro");
+  const titleRef = useRef(null);
+  const navigate = useNavigate();
 
   const products = [
     {
@@ -14,7 +17,7 @@ const AboutCeo = () => {
         Explorez un programme sur mesure conçu pour améliorer votre condition physique, votre santé et votre bien-être, le tout dans un environnement confortable et sécurisé.`
       },
       rating: { text: "Vous êtes intéressé ?", starsCount: 5 },
-      img: "/images/media/img_01.jpg"
+      img: "/images/Menu/2.jpeg"
     },
     {
       title: { subtitle: "Offre", mainTitle: <>Séance <span>Collective</span></> },
@@ -30,14 +33,14 @@ const AboutCeo = () => {
         orienter vers le programme qui correspond le mieux à vos besoins.`
       },
       rating: { text: "Vous êtes intéressé ?", starsCount: 4 },
-      img: "/images/media/img_01.jpg"
+      img: "/images/Menu/1.jpeg"
     },
     {
       title: { subtitle: "Offre", mainTitle: <>Conseils en Nutrition et <span>Bien-être</span></> },
       content: {
         sectionTitle: "En quoi ça consiste ?",
         tabs: {
-          intro: `<p><strong>Atteignez un équilibre de vie sain et durable avec un accompagnement personnalisé.</strong> <br/> Notre objectif est de vous aider à trouver un équilibre de vie optimal en prenant en compte tous les
+          intro: `<p><strong>Atteignez un équilibre de vie sain et durable avec un accompagnement personnalisé.</strong> <br/> <br/>Notre objectif est de vous aider à trouver un équilibre de vie optimal en prenant en compte tous les
                   aspects de votre bien-être. Notre programme se divise en 5 phases essentielles : hydratation,
                   nutrition, activité physique, sommeil et création planning. Chaque phase est conçue pour agir en
                   synergie et vous offrir des résultats durables.</p>`,
@@ -70,7 +73,7 @@ const AboutCeo = () => {
         }
       },
       rating: { text: "Vous êtes intéressé ?", starsCount: 5 },
-      img: "/images/media/conseils_nutrition.png"
+      img: "/images/5 steps to.png"
     },
     {
       title: { subtitle: "Offre", mainTitle: <>Les <span>livrets</span></> },
@@ -108,106 +111,184 @@ const AboutCeo = () => {
         }
       },
       rating: { text: "Vous êtes intéressé ?", starsCount: 4 },
-      img: "/images/media/Cancer.png"
+      img: "/images/media/conseils_nutrition.png"
     }
     
   ];
 
+  // Permet de sélectionner l'offre dans le menu déroulant
+const handleSelect = (event) => {
+  const selectedIndex = Number(event.target.value);
+  setCurrentProductIndex(selectedIndex);
+};
+
+
   const changeProduct = (increment) => {
     const newIndex = (currentProductIndex + increment + products.length) % products.length;
     setCurrentProductIndex(newIndex);
+
+    // Défilement vers le mainTitle
+    if (titleRef.current) {
+      const yOffset = 100; // Décale vers le haut de 15px
+      const yPosition = titleRef.current.getBoundingClientRect().top + window.scrollY - yOffset;
+  
+      window.scrollTo({
+        top: yPosition,
+        behavior: "smooth",
+      });
+    }
   };
-
+  
   return (
-    <div className="row align-items-start">
-      {/* IMAGE */}
-      <div className="col-md-6 order-md-first img-container">
-        <img style={{ width: "100%", height: "800px", objectFit: "cover" }} src={products[currentProductIndex].img} alt="Product Image" className="lazy-img" />
-      </div>
-
-      {/* CONTENU */}
-      <div className="col-lg-5 col-md-6 order-md-last">
-  <div className="block-style-one">
-    <div className="title-style-one">
-      <div className="sc-title text-uppercase">{products[currentProductIndex].title.subtitle}</div>
-      <h2 className="main-title text-black">{products[currentProductIndex].title.mainTitle}</h2>
+    <div>
+    {/* MENU DÉROULANT EN HAUT AU CENTRE */}
+    <div className="text-center mb-4">
+      <label htmlFor="offerSelect" className="fw-bold">Sélectionnez votre offre :</label>
+      <select
+        id="offerSelect"
+        className="form-select mt-2"
+        style={{ maxWidth: "300px", margin: "0 auto" }}
+        onChange={handleSelect}
+        value={currentProductIndex}
+      >
+        {products.map((product, index) => (
+          <option key={index} value={index}>
+            {product.title.mainTitle}
+          </option>
+        ))}
+      </select>
     </div>
-
-    <h4>{products[currentProductIndex].content.sectionTitle}</h4>
-
-    {/* Vérifie si on est sur "Conseils en Nutrition et Bien-être" */}
-    {currentProductIndex === 2 ? (
-      <>
-        <div style={styles.tabContainer}>
-          {Object.keys(products[currentProductIndex].content.tabs).map((tab) => (
-            <button key={tab} 
-              style={activeTab === tab ? styles.activeTab : styles.tabButton} 
-              onClick={() => setActiveTab(tab)}>
-              {tab === "intro" ? "Introduction" :
-                tab === "guide" ? "Guide & Accompagnement" :
-                tab === "suivi" ? "Suivi Personnalisé" :
-                "Programme Complet"}
-            </button>
-          ))}
-        </div>
-        <p className="fs-20" dangerouslySetInnerHTML={{ __html: products[currentProductIndex].content.tabs[activeTab] }}></p>
-      </>
     
-    /* Vérifie si on est sur "Les livrets" */
-    ) : currentProductIndex === 3 ? (
-      <>
-        <div style={styles.tabContainer}>
-          {Object.keys(products[currentProductIndex].content.tabs).map((tab) => (
-            <button key={tab} 
-              style={activeTab === tab ? styles.activeTab : styles.tabButton} 
-              onClick={() => setActiveTab(tab)}>
-              {tab === "intro" ? "Introduction" :
-                tab === "nutrition" ? "Conseils Nutrition" :
-                tab === "exercices" ? "Exercices Ciblés" :
-                tab === "exemples" ? "Exemples de Livrets" :
-                "Commander"}
-            </button>
-          ))}
-        </div>
-        <p className="fs-20" dangerouslySetInnerHTML={{ __html: products[currentProductIndex].content.tabs[activeTab] }}></p>
-      </>
-    
-    /* Si ce n'est ni "Conseils en Nutrition" ni "Les livrets", afficher la description simple */
-    ) : (
-      <p className="fs-20" dangerouslySetInnerHTML={{ __html: products[currentProductIndex].content.description }}></p>
-    )}
+    <div className="row align-items-start" ref={titleRef}>
 
-    {/* Bouton de contact */}
-    <button className="btn-twentyOne">
-      <Link to="/contact/contact-v1" className="text-white text-decoration-none">Prendre contact</Link>
-    </button>
-  </div>
-</div>
-
-
-      {/* ✅ FLÈCHE TOUJOURS VISIBLE */}
-      <div className="col-md-1 order-md-last d-flex align-items-center justify-content-center"
-        style={{
-          position: "absolute",
-          right: "30px",
-          top: "50%",
-          transform: "translateY(-50%)",
-          zIndex: "10"
-        }}>
-        <img
-          src="images/assets/fleche-droite.png"
-          alt="Next Product"
-          onClick={() => changeProduct(1)}
-          className="img-fluid"
-          style={{ cursor: "pointer", transition: "transform 0.3s", width: "50px" }}
-          onMouseOver={(e) => (e.target.style.transform = 'scale(1.2)')}
-          onMouseOut={(e) => (e.target.style.transform = 'scale(1)')}
+      {/* IMAGE */}
+      <div className="col-md-6 order-md-first img-container d-none d-md-block">
+        <img 
+          src={products[currentProductIndex].img} 
+          alt="Product Image" 
+          className="lazy-img"
+          style={{ 
+            width: "100%", 
+            height: "730px", 
+            objectFit: "cover", 
+            borderRadius: "0px",
+            boxShadow: "none",
+            maxHeight: "800px"
+          }} 
         />
       </div>
+  
+      {/* CONTENU */}
+      <div className="col-lg-5 col-md-6 order-md-last">
+        <div className="block-style-one">
+          <div className="title-style-one">
+          <div className="sc-title text-uppercase" style={{ display: window.innerWidth <= 768 ? 'none' : 'block' }}>
+            {products[currentProductIndex].title.subtitle}
+          </div>
+            <h2 className="hero-heading fw-bold">{products[currentProductIndex].title.mainTitle}</h2>
+            <div className="d-md-none" style={{ marginTop: "15px", marginBottom: "20px", textAlign: "center" }}>
+              <img 
+                src={products[currentProductIndex].img} 
+                alt="Product Image" 
+                className="lazy-img"
+                style={{ 
+                  width: "100%", 
+                  maxWidth: "350px",
+                  maxHeight: "250px", 
+                  objectFit: "cover", 
+                  borderRadius: "15px",
+                  boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)"
+                }} 
+              />
+            </div>
+          </div>
+  
+          <h4>{products[currentProductIndex].content.sectionTitle}</h4>
+  
+          {(currentProductIndex === 2 || currentProductIndex === 3) ? (
+          <>
+            <div style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "10px",
+              justifyContent: "center"
+            }}>
+              {Object.keys(products[currentProductIndex].content.tabs).map((tab) => (
+                <button key={tab}
+                  style={{
+                    flex: "1 1 45%",
+                    minWidth: "120px",
+                    padding: "8px",
+                    backgroundColor: activeTab === tab ? "#25ABBE" : "#f5f5f5",
+                    color: activeTab === tab ? "white" : "black",
+                    borderRadius: "5px",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => setActiveTab(tab)}>
+                  {tab === "intro" ? "Introduction" :
+                    tab === "guide" ? "Guide & Accompagnement" :
+                    tab === "suivi" ? "Suivi Personnalisé" :
+                    tab === "nutrition" ? "Conseils Nutrition" :
+                    tab === "exercices" ? "Exercices Ciblés" :
+                    tab === "exemples" ? "Exemples de Livrets" :
+                    "Commander"}
+                </button>
+              ))}
+            </div>
+              <div style={{marginTop: "20px"}}>
+                  <p className="fs-20" style={{margintTop: ''}} dangerouslySetInnerHTML={{ __html: products[currentProductIndex].content.tabs[activeTab] }}></p>
+              </div>
+          </>
+        ) : (
+          <div style={{marginTop: "20px"}}>
+            <p className="fs-20" dangerouslySetInnerHTML={{ __html: products[currentProductIndex].content.description }}></p> 
+          </div>
+        )}
+  
+          {/* Bouton de contact */}
+          <div
+  style={{
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "10px",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",        // Le container prend toute la largeur
+    padding: "0 10px",    // Petite marge latérale pour éviter que le bouton soit collé
+  }}
+>
+  <button
+    className="btn-twentyOne"
+    style={{
+      // Sur un mobile (écran étroit), width="100%" prendra toute la largeur possible
+      // Sur un écran plus large, on limite la taille max à 400px pour ne pas étirer le bouton à l’infini
+      width: "100%",
+      maxWidth: "400px",
+    }}
+    onClick={() => navigate("/contact/contact-v1")}
+  >
+    Prendre Contact
+  </button>
+
+  <button
+    className="btn-twentyOne"
+    style={{
+      backgroundColor: "grey",
+      width: "100%",
+      maxWidth: "400px",
+    }}
+    onClick={() => changeProduct(1)}
+  >
+    Offre suivante →
+  </button>
+</div>
+
+        </div>
+      </div>
+    </div>
     </div>
   );
-};
-
+};  
 // ✅ STYLES INLINE
 const styles = {
   tabContainer: { display: "flex", gap: "10px", marginBottom: "15px" },

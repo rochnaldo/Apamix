@@ -11,11 +11,8 @@ const FancyBanner = () => {
             <strong>Nos Services Pour les Professionnels :</strong>
           </p>
           <ul className="fs-16 lh-md mt-10">
-            <li><strong>Prises en Charge Collectives et Individuelles</strong>
-              
+            <li><strong>Prises en Charge Collectives et Individuelles</strong></li>
             <li><strong>Bilans de Santé et Évaluations Personnalisées</strong></li>
-              
-            </li>
             <li><strong>Interventions Spécifiques sur Demande</strong></li>
             <li><strong>Sport en Entreprise</strong></li>
           </ul>
@@ -33,6 +30,7 @@ const FancyBanner = () => {
       illustrationAlt: "illustration",
       illustrationPosition: "right",
       aos: "fade-right",
+      link: "/particuliers", // Lien pour Entreprises
     },
     {
       title: "Nos Services Pour les Particuliers",
@@ -57,6 +55,7 @@ const FancyBanner = () => {
       illustrationAlt: "illustration",
       illustrationPosition: "left",
       aos: "fade-left",
+      link: "/entreprises", // Lien pour Particuliers
     },
   ];
 
@@ -67,30 +66,29 @@ const FancyBanner = () => {
           <div className="block-style-four mt-150 lg-mt-80" key={index}>
             <div className="row align-items-center">
               <div
-                className={`col-xl-5 col-lg-6 order-lg-${
-                  data.illustrationPosition === "left" ? "first" : "last"
-                }`}
+                className={`col-xl-5 col-lg-6 order-lg-${data.illustrationPosition === "left" ? "first" : "last"}`}
                 data-aos={data.aos}
               >
                 <div className="title-style-eight">
-                  <div className="sc-title text-uppercase fs-18 mb-10">{data.title}</div>
-                  <h2 className="main-title tx-dark fw-bold fs-24">{data.mainTitle}</h2>
+                  <div className="sc-title text-uppercase mb-10" style={{ marginLeft: "20px" }}>{data.title}</div>
+                  <h2 className="hero-heading fw-bold fs-24">{data.mainTitle}</h2>
                 </div>
                 <div className="fs-16 lh-md mt-20">{data.description}</div>
               </div>
               <div
-                className={`col-xl-7 col-lg-6 col-md-8 m-auto order-lg-${
-                  data.illustrationPosition === "left" ? "last" : "first"
-                }`}
+                className={`col-xl-7 col-lg-6 col-md-8 m-auto order-lg-${data.illustrationPosition === "left" ? "last" : "first"}`}
                 data-aos={data.aos}
               >
-                <div className="illustration-holder d-flex justify-content-center align-items-center h-100">
-                  <img
-                    src={data.illustration}
-                    alt={data.illustrationAlt}
-                    className="lazy-img"
-                    style={{ maxHeight: "90%", maxWidth: "90%", objectFit: "contain" }}
-                  />
+                <div className="illustration-holder2 d-flex justify-content-center align-items-center h-100">
+                  {/* ✅ Utilisation de Link pour rediriger au clic */}
+                  <Link to={data.link} className="image-button">
+                    <img
+                      src={data.illustration}
+                      alt={data.illustrationAlt}
+                      className="lazy-img"
+                      style={{ maxHeight: "90%", maxWidth: "90%", objectFit: "contain" }}
+                    />
+                  </Link>
                 </div>
               </div>
             </div>

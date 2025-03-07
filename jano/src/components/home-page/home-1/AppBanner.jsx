@@ -37,11 +37,11 @@ const AppBanner = () => {
         <div className="col-lg-6">
           <div className="block-style-seven" data-aos="fade-right">
             <div className="title-style-one">
-              <h2 className="main-title fw-500 tx-dark m0">
+              <h2 className="hero-heading fw-bold m0" style={{paddingLeft: "15px"}}>
                 Qu’est ce que l’activité physique adaptée ?
               </h2>
             </div>
-            <p className="fs-20 pt-30 pb-30 lg-pb-20">
+            <p className="fs-20 pt-30 pb-30 lg-pb-20" style={{marginLeft: "15px"}}>
               L’ activité physique adaptée (APA) est une pratique spécialisée qui
               consiste à concevoir et à encadrer des programmes d’exercices
               physiques en fonction des besoins individuels des personnes. Cette approche est
@@ -73,8 +73,8 @@ const AppBanner = () => {
           {" "}
 
           <div className="col-lg-12 mb-3 text-start" style={{marginTop: "380px"}}>
-            <h2 className="main-title fw-500 tx-dark m0" style={{paddingLeft: "25px"}}>Sport sur ordonnance</h2>
-            <p className="fs-20 pt-30 pb-30 lg-pb-20" style={{marginLeft: "25px"}}>
+            <h2 className="hero-heading fw-bold m0" style={{paddingLeft: "5px"}}>Sport sur ordonnance</h2>
+            <p className="fs-20 pt-30 pb-30 lg-pb-20" style={{marginLeft: "5px"}}>
               L’ activité physique adaptée est souvent prescrite par les médecins comme
               complément aux traitements médicaux traditionnels. Les professionnels de santé
               recommandent des programmes d’APA pour les personnes ayant des besoins

@@ -2,15 +2,15 @@ import Counter from "./Counter";
 import ImgGallery from "./ImgGallery";
 import Intro2 from "./Intro.jsx";
 
-const index = () => {
+const Index = () => {
   return (
     <div className="row align-items-center">
-      <div className="col-lg-6 position-relative order-lg-first">
+      {/* Image affichée sur Desktop uniquement */}
+      <div className="col-lg-6 position-relative order-lg-first d-none d-md-block">
         <ImgGallery />
-        {/* /.img-gallery */}
       </div>
-      {/* End .col-lg-6 */}
 
+      {/* Contenu principal */}
       <div className="col-lg-5 ms-auto order-lg-last" data-aos="fade-left">
         <div className="ps-xl-4">
           <Intro2 />
@@ -19,9 +19,8 @@ const index = () => {
           </div>
         </div>
       </div>
-      {/* End .col-lg-6 */}
     </div>
   );
 };
 
-export default index;
+export default Index;

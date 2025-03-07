@@ -68,18 +68,18 @@ const Testimonial = () => {
   return (
     <div className="container mt-5">
       {/* Titre centré */}
-      <h2 className="text-center my-4">Nos retours Clients</h2>
-      <h4 className="text-center my-2">
+      <h2 className="text-center my-4 hero-heading fw-bold">Nos retours Clients</h2>
+      <p className="text-center text-lg">
         Chez APAMIX, on est ravis de voir nos clients retrouver le sourire et l’énergie grâce à nos séances d’activité physique adaptée. 
         Voici quelques retours de ceux qui nous ont fait confiance.
-      </h4>
+      </p>
 
       {/* Contenu en deux colonnes : Vidéo à gauche, Témoignages à droite */}
       <div className="row align-items-center mt-4">
         
         {/* Vidéo à gauche */}
         <div className="col-md-6 text-center">
-          <video width="100%" height="600px" controls>
+          <video width="100%" height="600px" controls poster="/images/témoignages.jpg">
             <source src="/videos/temoignages.MOV" type="video/mp4" />
             Votre navigateur ne supporte pas la vidéo.
           </video>

@@ -6,7 +6,8 @@ const Testimonial = () => {
     feedback:
       `Nous sommes régulièrement à la recherche de professionnels
 passionnés et compétents pour rejoindre notre équipe en tant
-qu'enseignants en activité physique adaptée.
+qu'enseignants en activité physique 
+adaptée.
 En rejoignant APAMIX, vous aurez l’opportunité de contribuer à
 des projets innovants et de faire une réelle différence dans la vie
 de nos clients tout en développant vos compétences au sein
@@ -17,7 +18,7 @@ d'une équipe dynamique et engagée.`,
   return (
     <div className="item">
       <div className="feedback-block-twelve mt-50">
-      <p className="tx-dark mt-35 lg-mt-20" style={{ fontSize: "1.5rem" }}>
+      <p className="text-lg d-lg-block">
   {testimonial.feedback}
 </p>
 

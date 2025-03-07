@@ -49,7 +49,7 @@ const IntroAbout = () => {
             {/*  className="lazy-img cursor-pointer"*/}
             {/*  onClick={() => setOpen(true)}*/}
             {/*/>*/}
-            <p className="text-lg fs-3 mb-50 lg-mb-30 pe-xxl-4" data-aos="fade-up">
+            <p className="text-lg fs-4 mb-50 lg-mb-30 pe-xxl-4" data-aos="fade-up">
               {showFirstPart ? (
                   <>
                     Je m’appelle Meghan Roche, épouse Levy-soussan. J’ai 29 ans
@@ -74,8 +74,9 @@ const IntroAbout = () => {
 
               )}
               <button onClick={toggleText} className="read-more-btn">
-                {showFirstPart ? "Lire la suite" : "Retour"}
-              </button>
+  {showFirstPart ? "Lire la suite" : "Retour"}
+</button>
+
             </p>
             {/*<h6*/}
             {/*  className="fs-20 tx-dark d-inline-block fst-italic position-relative ps-4"*/}

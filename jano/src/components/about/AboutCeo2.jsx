@@ -1,9 +1,25 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
 
 const AboutCeo2 = () => {
   const [currentProductIndex, setCurrentProductIndex] = useState(0);
   const [showDetails, setShowDetails] = useState(false);
+   const titleRef = useRef(null);
+   const navigate = useNavigate();
+
+   const handleSelect = (event) => {
+    const selectedIndex = Number(event.target.value);
+    setCurrentProductIndex(selectedIndex);
+  
+    // Si tu veux scroller jusqu'au titre :
+    if (titleRef.current) {
+      const yOffset = 100;
+      const yPosition =
+        titleRef.current.getBoundingClientRect().top + window.scrollY - yOffset;
+      window.scrollTo({ top: yPosition, behavior: "smooth" });
+    }
+  };
 
   const products = [
     {
@@ -14,7 +30,7 @@ const AboutCeo2 = () => {
         Nos interventions peuvent être intégrées directement dans vos structures ou organisées en sessions régulières pour soutenir la santé et le bien-être des participants.`
       },
       rating: { text: "Vous êtes intéressé ?", starsCount: 5 },
-      img: "/images/media/img_01.jpg"
+      img: "/images/Menu/en1.jpeg"
     },
     {
       title: { subtitle: "Offre", mainTitle: <>Bilans de Santé et <span>Évaluations Personnalisées</span></> },
@@ -24,7 +40,7 @@ const AboutCeo2 = () => {
         Ces évaluations nous permettent de concevoir des programmes personnalisés qui optimisent les bénéfices de l’activité physique en fonction des conditions spécifiques et des objectifs de chaque personne.`
       },
       rating: { text: "Vous êtes intéressé ?", starsCount: 4 },
-      img: "/images/media/img_01.jpg"
+      img: "/images/Menu/pa3.jpeg"
     },
     {
       title: { subtitle: "Offre", mainTitle: <>Interventions <span>Spécifiques sur Demande</span></> },
@@ -35,7 +51,7 @@ const AboutCeo2 = () => {
         nous pouvons répondre à des demandes sur mesure pour mieux servir vos clients et résidents.`
       },
       rating: { text: "Vous êtes intéressé ?", starsCount: 4 },
-      img: "/images/media/img_01.jpg"
+      img: "/images/Menu/3.jpeg"
     },
     {
       title: { subtitle: "Offre", mainTitle: <>Sport en <span>Entreprise</span></> },
@@ -46,26 +62,60 @@ const AboutCeo2 = () => {
         Nous offrons des séances sur site, des ateliers de sensibilisation, et des conseils pour intégrer l’activité physique dans la routine de travail.`
       },
       rating: { text: "Vous êtes intéressé ?", starsCount: 4 },
-      img: "/images/media/img_01.jpg"
+      img: "/images/Menu/1.jpeg"
     }
   ];
 
   const changeProduct = (increment) => {
     const newIndex = (currentProductIndex + increment + products.length) % products.length;
     setCurrentProductIndex(newIndex);
+
+    if (titleRef.current) {
+      const yOffset = 100; // Décale vers le haut de 15px
+      const yPosition = titleRef.current.getBoundingClientRect().top + window.scrollY - yOffset;
+  
+      window.scrollTo({
+        top: yPosition,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
     <>
       {/* Affichage normal */}
+      <div className="text-center mb-4">
+  <label htmlFor="offerSelect" className="fw-bold">Sélectionnez votre offre :</label>
+  <select
+    id="offerSelect"
+    className="form-select mt-2"
+    style={{ maxWidth: "300px", margin: "0 auto" }}
+    onChange={handleSelect}
+    value={currentProductIndex}
+  >
+    {products.map((product, index) => (
+      <option key={index} value={index}>
+        {product.title.mainTitle}
+      </option>
+    ))}
+  </select>
+</div>
       {!showDetails ? (
-        <div className="row align-items-start">
-          <div className="col-md-6 order-md-first img-container" data-aos="fade-right">
-            <img
-              style={{ objectFit: "cover", height: "100%" }}
-              src={products[currentProductIndex].img}
-              alt="Product Image"
+        <div className="row align-items-start" ref={titleRef}>
+          {/* Image à gauche sur Desktop uniquement */}
+          <div className="col-md-6 order-md-first img-container d-none d-md-block" data-aos="fade-right">
+            <img 
+              src={products[currentProductIndex].img} 
+              alt="Product Image" 
               className="lazy-img"
+              style={{ 
+                width: "100%", 
+                height: "720px", 
+                objectFit: "cover", 
+                borderRadius: "0px",
+                boxShadow: "none",
+                maxHeight: "800px"
+              }} 
             />
           </div>
 
@@ -73,49 +123,43 @@ const AboutCeo2 = () => {
             <div className="block-style-one" data-aos="fade-left">
               <div className="title-style-one">
                 <div className="sc-title text-uppercase">{products[currentProductIndex].title.subtitle}</div>
-                <h2 className="main-title text-black">{products[currentProductIndex].title.mainTitle}</h2>
+                <h2 className="hero-heading fw-bold">{products[currentProductIndex].title.mainTitle}</h2>
+
+                {/* Image sous le titre pour mobile uniquement */}
+                <div className="d-md-none" style={{ marginTop: "15px", marginBottom: "20px", textAlign: "center" }}>
+                  <img 
+                    src={products[currentProductIndex].img} 
+                    alt="Product Image" 
+                    className="lazy-img"
+                    style={{ 
+                      width: "100%", 
+                      maxWidth: "350px",  
+                      maxHeight: "250px", 
+                      objectFit: "cover", 
+                      borderRadius: "15px",
+                      boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)"
+                    }} 
+                  />
+                </div>
               </div>
+
               <h4 className="tx-dark pt-65 pb-20 lg-pt-40 lg-pb-10">{products[currentProductIndex].content.sectionTitle}</h4>
               <p className="fs-20">{products[currentProductIndex].content.description}</p>
 
-              {/* Bouton "En savoir plus" pour "Sport en Entreprise" */}
-              {currentProductIndex === 3 && (
-                <p className="fs-20">
-                {products[currentProductIndex].content.description}{" "}
-                {currentProductIndex === 3 && (
-                  <a 
-                    href="#" 
-                    onClick={(e) => { e.preventDefault(); setShowDetails(true); }} 
-                    className="text-primary fw-bold"
-                    style={{ cursor: "pointer", textDecoration: "underline" }}
-                  >
-                    En savoir plus
-                  </a>
-                )}
-              </p>
-              
-              )}
-
-              <button className="btn-twentyOne mt-3">
-                <Link to="/contact/contact-v1" className="text-white text-decoration-none">
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", alignItems: "center", justifyContent: "center", width: "100%", padding: "0 10px" }}>
+                <button  onClick={() => navigate("/contact/contact-v1")} className="btn-twentyOne" style={{ width: "100%", maxWidth: "400px" }}>
                   Prendre contact
-                </Link>
-              </button>
-            </div>
-          </div>
+                </button>
 
-          {/* Flèche de navigation */}
-          <div className="col-md-1 order-md-last d-flex align-items-center justify-content-center"
-            style={{ height: "100%", marginTop: "300px" }}>
-            <img
-              src="images/assets/fleche-droite.png"
-              alt="Next Product"
-              onClick={() => changeProduct(1)}
-              className="img-fluid"
-              style={{ cursor: "pointer", transition: "transform 0.3s" }}
-              onMouseOver={(e) => e.target.style.transform = 'scale(1.2)'}
-              onMouseOut={(e) => e.target.style.transform = 'scale(1)'}
-            />
+                <button 
+                  className="btn-twentyOne" 
+                  style={{ backgroundColor: "grey", width: "100%", maxWidth: "400px" }} 
+                  onClick={() => changeProduct(1)}
+                >
+                  Offre suivante →
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       ) : (
@@ -126,38 +170,8 @@ const AboutCeo2 = () => {
             <h2>Sport en Entreprise</h2>
             <p>
               Chez APAMIX, nous croyons fermement que l’intégration de l’activité physique dans le milieu professionnel est essentielle pour
-              améliorer la santé et le bien-être des employés. Nos programmes de sport en entreprise sont conçus pour non seulement
-              encourager l’activité physique mais aussi optimiser les environnements de travail grâce à l’ergonomie.
-            </p>
-            <h4>Avantages du Sport en Entreprise :</h4>
-            <ul>
-              <li><strong>Réduction des Arrêts de Travail :</strong> Des études montrent que les entreprises qui intègrent des programmes d’activité physique voient une réduction significative des
-arrêts de travail. En moyenne, les programmes d’activité physique en entreprise peuvent réduire les absences liées à des
-problèmes de santé de 25 à 30%. Nos clients constatent souvent une diminution des arrêts de travail, améliorant ainsi la
-productivité globale.</li>
-              <br/><li><strong>Amélioration de la Productivité :</strong> L’activité physique régulière est directement liée à une augmentation de la productivité. Des recherches indiquent que les
-employés qui participent à des programmes de sport en entreprise peuvent améliorer leur concentration et leur performance de
-15 à 20%. En renforçant l’endurance et la concentration, nos programmes contribuent à une meilleure performance au travail.</li>
-              <br/><li><strong>Réduction du Stress :</strong> L'exercice physique est un excellent moyen de réduire le stress et d'améliorer l'humeur. Nos programmes sont conçus pour offrir
-des séances dynamiques qui aident à réduire le stress au travail et à promouvoir un environnement de travail plus positif et
-dynamique.</li>
-            </ul>
-            <br/>
-            <h4>Ergonomie au Travail :</h4>
-            <ul>
-              <li><strong>Optimisation des Espaces :</strong> En plus de nos programmes d’activité physique, nous proposons également des conseils en ergonomie pour améliorer les
-espaces de travail. Une bonne ergonomie peut prévenir les troubles musculo-squelettiques et améliorer le confort des employés.
-Nous offrons des évaluations ergonomiques et des recommandations personnalisées pour ajuster les postes de travail et les
-équipements.</li>
-<br/>
-              <li><strong>Formations Ergonomiques :</strong> Nous organisons des ateliers et des formations sur les meilleures pratiques ergonomiques, enseignant aux employés comment
-              adopter des postures correctes et ajuster leur environnement de travail pour minimiser les risques de blessures.</li>
-            </ul>
-            <h4>Pourquoi choisir APAMIX ?</h4>
-            <p>
-            Nos programmes de sport en entreprise sont conçus pour répondre aux besoins spécifiques de votre organisation et de vos
-            employés. En combinant l’activité physique avec des conseils ergonomiques, nous offrons une solution complète pour améliorer
-            la santé, le bien-être, et la productivité au travail.
+              améliorer la santé et le bien-être des employés. Nos programmes de sport en entreprise sont conçus pour encourager
+              l’activité physique et optimiser les environnements de travail grâce à l’ergonomie.
             </p>
           </div>
         </div>

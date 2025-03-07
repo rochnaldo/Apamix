@@ -12,41 +12,78 @@ const ImgGallery2 = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // Changement toutes les 3 secondes
+    }, 3000);
 
-    return () => clearInterval(interval); // Nettoyage de l'intervalle
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <div 
-      className="img-gallery md-mt-60 text-center"
-      style={{ 
-        width: "100%", 
-        height: "700px", // Hauteur fixe du bloc
-        position: "relative",
-        overflow: "hidden",
-        borderRadius: "10px"
-      }}
-    >
-      {images.map((img, index) => (
-        <img
-          key={index}
-          src={img}
-          alt="Diaporama"
-          className="lazy-img"
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover", // Remplit sans distorsion
-            position: "absolute",
-            top: 0,
-            left: 0,
-            opacity: index === currentImageIndex ? 1 : 0,
-            transition: "opacity 1s ease-in-out"
-          }}
-        />
-      ))}
-    </div>
+    <>
+      {/* Version normale pour Desktop */}
+      <div 
+        className="img-gallery text-center d-none d-md-block"
+        style={{ 
+          width: "100%", 
+          height: "700px", // Garder la taille originale sur Desktop
+          position: "relative",
+          overflow: "hidden",
+          borderRadius: "10px"
+        }}
+      >
+        {images.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt="Diaporama"
+            className="lazy-img"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              opacity: index === currentImageIndex ? 1 : 0,
+              transition: "opacity 1s ease-in-out"
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Version réduite pour Mobile */}
+      <div 
+        className="img-gallery text-center d-md-none"
+        style={{ 
+          width: "100%", 
+          maxWidth: "350px",  
+          height: "250px",  
+          position: "relative",
+          overflow: "hidden",
+          borderRadius: "15px",
+          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+          margin: "0 auto"
+        }}
+      >
+        {images.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt="Diaporama"
+            className="lazy-img"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              opacity: index === currentImageIndex ? 1 : 0,
+              transition: "opacity 1s ease-in-out"
+            }}
+          />
+        ))}
+      </div>
+    </>
   );
 };
 

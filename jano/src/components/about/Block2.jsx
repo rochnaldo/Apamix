@@ -80,7 +80,7 @@ const Block2 = () => {
                 <img src={card.iconSrc} alt="icon" className="lazy-img" />
               </div>
               <h5 className="fw-500 mt-35 mb-25">
-                <Link to="/pages-menu/service-details" className="tran3s tx-dark">
+                <Link className="tran3s tx-dark">
                   {card.title}
                 </Link>
               </h5>

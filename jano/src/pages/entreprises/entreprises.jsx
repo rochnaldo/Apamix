@@ -25,7 +25,7 @@ const Entreprises = () => {
           <Seo pageTitle="Entreprises"/>
           <Header/>
           <div
-              className="hero-banner-three position-relative pb-0 pt-100 md-pt-150"
+              className="hero-banner-three position-relative pb-0 pt-100 md-pt-80"
               data-aos="fade-right"
           >
               {" "}
@@ -33,14 +33,12 @@ const Entreprises = () => {
 
               {/* /.wrapper */}
               <div className="fancy-feature-fortyEight position-relative pb-0">
-                  <div className="container">
-                      <div className="position-relative pb-0 lg-pt-120 lg-pb-110">
-                          <About/>
-                      </div>
-                      {/* /.line-bg-wrapper */}
-                  </div>
-                  {/* /.container */}
-              </div>
+  <div className="container">
+    <div className="position-relative pb-0">
+      <About />
+    </div>
+  </div>
+</div>
           </div>
           <div className="pricing-section-two position-relative pt-50 pb-150 mt-180 lg-mt-120 lg-pt-70 lg-pb-70 mt-n3">
               <div className="fancy-feature-two position-relative pt-150 lg-pt-90">

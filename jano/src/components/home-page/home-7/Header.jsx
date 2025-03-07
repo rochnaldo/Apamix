@@ -6,15 +6,26 @@ const Header = () => {
   const [navbar, setNavbar] = useState(false);
 
   const changeBackground = () => {
-    if (window.scrollY >= 10) {
+    if (window.innerWidth <= 768) {
+      // Toujours fixe sur mobile
       setNavbar(true);
     } else {
-      setNavbar(false);
+      // Fixe seulement quand on scroll sur desktop
+      if (window.scrollY >= 10) {
+        setNavbar(true);
+      } else {
+        setNavbar(false);
+      }
     }
   };
 
   useEffect(() => {
+    // Appliquer l'effet immédiatement au chargement de la page
+    changeBackground();
+    
+    // Écouter l'événement de scroll
     window.addEventListener("scroll", changeBackground);
+
     return () => {
       window.removeEventListener("scroll", changeBackground);
     };
@@ -36,7 +47,6 @@ const Header = () => {
           <MainMenu />
         </div>
       </div>
-      {/* /.inner-content */}
     </header>
   );
 };

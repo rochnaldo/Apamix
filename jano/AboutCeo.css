@@ -1,0 +1,33 @@
+/* Nouveau bouton flèche */
+.change-product-button {
+    background-color: #000;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    text-align: center;
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .change-product-button:hover {
+    background-color: #444;
+  }
+  
+  /* Responsive Mobile */
+  @media screen and (max-width: 768px) {
+    .change-product-button {
+      width: 100% !important;
+      max-width: 200px !important;
+      margin: 20px auto !important;
+      display: block !important;
+    }
+  }
+  

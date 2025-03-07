@@ -29,44 +29,87 @@ const Coachs = () => {
         <Header/>
 
         <div
-            className="hero-banner-three position-relative pb-0 pt-100 md-pt-150"
-            data-aos="fade-right"
-        >
+              className="hero-banner-three position-relative pb-0 md-pt-10 pt-100"
+              data-aos="fade-right"
+          >
+              {" "}
+              {/* /.container */}
+
+              {/* /.wrapper */}
+              <style>
+  {`
+    .fancy-feature-fortyEight {
+      padding-top: 50px; /* Réduction de l'espace en haut */
+      padding-bottom: 0;
+    }
+
+    .fancy-feature-fortyEight .container {
+      padding-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .fancy-feature-fortyEight {
+        padding-top: 30px; /* Encore plus réduit sur mobile */
+      }
+    }
+
+    @media (max-width: 576px) {
+      .fancy-feature-fortyEight {
+        padding-top: 20px; /* Ultra compact pour petits écrans */
+      }
+    }
+  `}
+</style>
+
           <div className="feedback-section-fourteen position-relative zn2">
             <div className="container">
               <div className="position-relative zn2 pt-30 pb-18 lg-pt-120 lg-pb-80">
                 <div className="row">
-                  <div className="col-md-6" data-aos="fade-right">
-                    <div className="title-style-five">
-                      <h2 className="main-title hero-heading fw-bold">
-                        Nous recrutons des <span className="gradient-text">Coachs</span>
-                      </h2>
-                    </div>
-                    <div className="mt-60 lg-mt-40 ps-xl-0 ms-xl-2">
-                      <div className="feedback_slider_eleven">
-                        <Testimonial/>
-                      </div>
-                    </div>
-                  </div>
+                <div className="col-md-6" data-aos="fade-right">
+  <div className="title-style-five">
+    <h2 className="main-title hero-heading fw-bold">
+      Nous recrutons des <span className="gradient-text">Coachs</span>
+    </h2>
+  </div>
 
-                  <div className="col-xl-6 col-lg-5 col-md-6 ms-auto">
-                    <div
-                        className="img-holder position-relative mt-25"
-                        data-aos="fade-left"
-                    >
-                      <img
-                          src="/images/media/img_84.jpg"
-                          alt="Coaching"
-                          className="lazy-img ms-auto"
-                      />
-                      <div
-                          className="rating-box bg-black text-white d-flex flex-column justify-content-center align-items-center"
-                      >
-                        <strong className="fw-500">4.8</strong>
-                        <span>avg rating</span>
-                      </div>
-                    </div>
-                  </div>
+  {/* Image uniquement sur mobile entre le titre et le feedback */}
+  <div className="d-md-none text-center mt-4">
+    <img
+      src="/images/media/img_84.jpg"
+      alt="Coaching"
+      className="lazy-img"
+      style={{ 
+        width: "100%", 
+        maxWidth: "350px",
+        maxHeight: "250px", 
+        objectFit: "cover", 
+        borderRadius: "15px",
+        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)"
+      }} 
+    />
+  </div>
+
+  <div className="mt-60 lg-mt-40 ps-xl-0 ms-xl-2">
+    <div className="feedback_slider_eleven">
+      <Testimonial />
+    </div>
+  </div>
+</div>
+
+{/* Cache l'image originale sur mobile */}
+<div className="col-xl-6 col-lg-5 col-md-6 ms-auto d-none d-md-block">
+  <div className="img-holder position-relative mt-25" data-aos="fade-left">
+    <img
+      src="/images/media/img_84.jpg"
+      alt="Coaching"
+      className="lazy-img ms-auto"
+    />
+    <div className="rating-box bg-black text-white d-flex flex-column justify-content-center align-items-center">
+      <strong className="fw-500">4.8</strong>
+      <span>avg rating</span>
+    </div>
+  </div>
+</div>
                 </div>
               </div>
             </div>
@@ -74,7 +117,7 @@ const Coachs = () => {
         </div>
 
         {/* Nouveau bloc ajouté ici */}
-        <div className="fancy-feature-one pt-120 lg-pt-90">
+        <div className="fancy-feature-one pt-120 lg-pt-10" >
           <div className="container">
             <div className="row align-items-center">
               <div className="col-lg-6 aos fadeInLeft">
@@ -85,7 +128,7 @@ const Coachs = () => {
                   </h2>
                 </div>
               </div>
-              <div className="col-lg-5 ms-auto aos fadeInRight">
+              <div className="col-lg-5 ms-auto aos fadeInRight lg-pt-30">
   <div
     style={{
       height: "500px",
@@ -182,7 +225,7 @@ const Coachs = () => {
         </div>
 
         {/*Block de Contact*/}
-        <div className="contact-section-four pt-180 md-pt-150">
+        <div className="contact-section-four pt-180 md-pt-20">
           <div className="container">
             <div className="row">
               <div className="col-xxl-7 col-lg-6 col-md-7 m-auto">

@@ -23,7 +23,8 @@ const ContactV1 = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("/api/send-email", {
+      const response = await fetch("http://localhost:5000/api/send-email", {
+
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -61,9 +62,9 @@ const ContactV1 = () => {
             <div className="col-lg-7 text-center m-auto" data-aos="fade-up">
               <div className="title-style-five mb-65 lg-mb-40">
                 <div className="sc-title-two fst-italic position-relative d-inline-block">
-                  Contact Info
+                  Informations
                 </div>
-                <h2 className="main-title fw-500 tx-dark">Inscription à une séance</h2>
+                <h2 className="hero-heading fw-bold">Inscription à une séance</h2>
               </div>
             </div>
           </div>
@@ -129,7 +130,7 @@ const ContactV1 = () => {
                   {/* Séance souhaitée (1er menu déroulant) */}
                   <div className="col-12">
                     <div className="input-group-meta form-group mb-35">
-                      <label className="d-block">Séance souhaitée*</label>
+                      <label className="d-block">Vous êtes*</label>
                       <select 
                         name="sessionType" 
                         value={formData.sessionType} 
@@ -144,9 +145,9 @@ const ContactV1 = () => {
                           cursor: "pointer"
                         }}
                       >
-                        <option value="">Sélectionner une séance</option>
-                        <option value="individuelle">Séance individuelle</option>
-                        <option value="collective">Séance collective</option>
+                        <option value="">Sélectionner un type</option>
+                        <option value="individuelle">Particulier</option>
+                        <option value="collective">Entreprise</option>
                       </select>
                       <div className="help-block with-errors" />
                     </div>
@@ -176,6 +177,7 @@ const ContactV1 = () => {
                         <option value="rdv">Prise de RDV pour une séance</option>
                         <option value="livret">Demande de livret personnalisé</option>
                         <option value="suivi_dietetique">Demande de suivi diététique</option>
+                        <option value="précommander (Mon rééquilibrage de ma vie facile)">Précommander (Mon rééquilibrage de ma vie facile)</option>
                         <option value="autres">Autres</option>
                       </select>
                       <div className="help-block with-errors" />
