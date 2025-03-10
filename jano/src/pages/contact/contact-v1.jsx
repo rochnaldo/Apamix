@@ -127,6 +127,21 @@ const ContactV1 = () => {
                     </div>
                   </div>
 
+                    <div className="col-12">
+                      <div className="input-group-meta form-group mb-35">
+                        <label className="d-block">Email*</label>
+                        <input 
+                          type="email" 
+                          placeholder="Votre email" 
+                          name="email" 
+                          value={formData.email} 
+                          onChange={handleChange} 
+                          required 
+                        />
+                        <div className="help-block with-errors" />
+                      </div>
+                    </div>
+
                   {/* Séance souhaitée (1er menu déroulant) */}
                   <div className="col-12">
                     <div className="input-group-meta form-group mb-35">

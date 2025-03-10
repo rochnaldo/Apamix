@@ -6,13 +6,6 @@ const BlockContact5 = () => {
       content: "megroche12@gmail.com",
       delay: "100",
     },
-    {
-      icon: "/images/icon/icon_114.svg",
-      title: "Par téléphone",
-      content: "",
-      link: "tel:+262 692 001760",
-      delay: "200",
-    },
   ];
 
   return (
